@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
 	public float Speed = 2.0f;
-	public float Pace = 5.0f;
+	public float Pace = 4.0f;
 
 	public Vector3 initialPosition;
 
@@ -45,26 +45,29 @@ public class Movement : MonoBehaviour {
 			// Verifica colisao com o número se o num tiver colisao ele rondomiza o numero e faz de novo
 			while (numComColisao) {
 				if ((_direcao == 1 && _flagFrente) || (_direcao == 2 && _flagCima) || (_direcao == 3 && _flagAtras) || (_direcao == 4 && _flagBaixo)) {
-					Debug.Log ("Mudou de direção");
 					_direcao = Random.Range (1, 4);
+					Debug.Log ("Troca");
 				} else {
 					numComColisao = false;
 				}
-			}
 
-			if (_direcao == 1) {
-				_pos += Vector3.right * Pace;
-			} else if (_direcao == 2) {
-				_pos += Vector3.left * Pace;
-			} else if (_direcao == 3) {
-				_pos += Vector3.forward * Pace;
-			} else if (_direcao == 4) {
-				_pos += Vector3.back * Pace;
-			} else {
-				_direcao = 0;
 			}
+							
+				if (_direcao == 1) {
+					_pos += Vector3.right * Pace;
+				} else if (_direcao == 2) {
+					_pos += Vector3.left * Pace;
+				} else if (_direcao == 3) {
+					_pos += Vector3.forward * Pace;
+				} else if (_direcao == 4) {
+					_pos += Vector3.back * Pace;
+				} else {
+					_direcao = 0;
+				}
 
-			transform.position = Vector3.MoveTowards(transform.position, _pos, Time.deltaTime * Speed);
+					transform.position = Vector3.MoveTowards(transform.position, _pos, Time.deltaTime * Speed);
+			//}
+			//}
 
 			yield return new WaitForSeconds(0.5f);
 

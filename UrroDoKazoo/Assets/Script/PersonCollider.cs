@@ -14,19 +14,15 @@ public class PersonCollider : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other) {
-		Debug.Log ("Entrou: " + gameObject.name + " + " + other.name);
-
 		_move.VerificaColisao (gameObject.name, true);
-
 
 	}
 
 	void OnTriggerStay(Collider other) {
-
+		//_move.VerificaColisao (gameObject.name, false);
 	}
 
 	void OnTriggerExit(Collider other) {
-
 		_move.VerificaColisao (gameObject.name, false);
 
 	}
