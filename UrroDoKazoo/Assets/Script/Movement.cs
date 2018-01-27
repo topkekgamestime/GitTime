@@ -8,9 +8,15 @@ public class Movement : MonoBehaviour {
 
 	public Vector3 initialPosition;
 
+	public GameObject ColliderCima;
+	public GameObject ColliderBaixo;
+	public GameObject ColliderFrente;
+	public GameObject ColliderTras;
+
 	private Transform _tr;
 	private Vector3 _pos;
 
+	private int _direcao; //1 - frente, 2 - cima, 3 - atras, 4 - baixo
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +42,26 @@ public class Movement : MonoBehaviour {
 		}
 
 		transform.position = Vector3.MoveTowards(transform.position, _pos, Time.deltaTime * Speed);
+
+	}
+
+	void checkCollision(Collider other) {
+
+		ColliderCima.GetComponent<BoxCollider> ();
+
+
+	}
+
+	void OnTriggerEnter(Collider other){
+
+
+	}
+
+	void OnTriggerStay(Collider other){
+
+	}
+
+	void OnTriggerExit(Collider other){
 
 	}
 }
