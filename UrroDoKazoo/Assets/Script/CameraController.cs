@@ -43,6 +43,10 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (Input.GetMouseButtonDown (0)) {
+			transform.position = new Vector3(Input.mousePosition.x, transform.position.y, Input.mousePosition.z);
+		}
+
 		if (Input.GetMouseButton (0)) {
 
 			clickTimer += Time.deltaTime;
@@ -78,6 +82,7 @@ public class CameraController : MonoBehaviour {
 			if (_InZoom) {
 				float fov = Mathf.Clamp (5f + 27f, 5f, 27f);
 				Camera.main.fieldOfView = fov;
+				transform.position = _initialCameraPos;
 
 				_InZoom = false;
 			}
