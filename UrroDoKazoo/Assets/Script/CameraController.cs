@@ -43,10 +43,6 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetMouseButtonDown (0)) {
-			transform.position = new Vector3(Input.mousePosition.x, transform.position.y, Input.mousePosition.z);
-		}
-
 		if (Input.GetMouseButton (0)) {
 
 			clickTimer += Time.deltaTime;
