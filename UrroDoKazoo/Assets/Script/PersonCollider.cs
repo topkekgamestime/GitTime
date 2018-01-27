@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class PersonCollider : MonoBehaviour {
 
-	void Start(){
-		Debug.Log ("lsfdgsygs");
-
-	}
-
 	void OnTriggerEnter(Collider other) {
 		Debug.Log ("Entrou: " + gameObject.name + " + " + other.name);
 	}
