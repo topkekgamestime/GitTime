@@ -218,6 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541802848}
   - component: {fileID: 541802847}
+  - component: {fileID: 541802849}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -259,7 +260,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b84682b250531487491c74d73b240931, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9322746082844c1ea48a840cfe81435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -282,6 +283,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!114 &541802849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541802846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1273858906e343d2968b068c29278ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 50
+  initialPosition: {x: 0, y: 5, z: 0}
 --- !u!1 &731281338
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +328,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b3fde93b517a44b27a77a76ae04aa015, type: 2}
+  - {fileID: 2100000, guid: 1d4a649c4014e4c4790dd01f3617e901, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

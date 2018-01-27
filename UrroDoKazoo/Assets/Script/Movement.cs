@@ -22,17 +22,17 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.D) && _tr.position == _pos) {
+		if (Input.GetKeyDown(KeyCode.A) && _tr.position == _pos) {
 			_pos += Vector3.right;
 		}
-		else if (Input.GetKeyDown(KeyCode.A) && _tr.position == _pos) {
+		else if (Input.GetKeyDown(KeyCode.D) && _tr.position == _pos) {
 			_pos += Vector3.left;
 		}
-		else if (Input.GetKeyDown(KeyCode.W) && _tr.position == _pos) {
-			_pos += Vector3.up;
-		}
 		else if (Input.GetKeyDown(KeyCode.S) && _tr.position == _pos) {
-			_pos += Vector3.down;
+			_pos += Vector3.forward;
+		}
+		else if (Input.GetKeyDown(KeyCode.W) && _tr.position == _pos) {
+			_pos += Vector3.back;
 		}
 
 		transform.position = Vector3.MoveTowards(transform.position, _pos, Time.deltaTime * Speed);
