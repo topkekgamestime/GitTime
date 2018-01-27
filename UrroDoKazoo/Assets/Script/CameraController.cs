@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
 
 	public float WidthBoundMultiplier = 5.5f;
 	public float HeightBoundMultiplier = 5.5f;
+	public float DragVelocity = 10.0f;
 
 
 	private Vector3 _initialCameraPos;
@@ -15,7 +16,6 @@ public class CameraController : MonoBehaviour {
 	private float _cameraHeight;
 	private Vector3 _boardBounds;
 
-	private float _speed = 10.0f;
 	private bool _InZoom = false;
 
 	float minFov = 15f;
@@ -54,11 +54,11 @@ public class CameraController : MonoBehaviour {
 
 					if (Input.GetAxis ("Mouse X") > 0) {
 						if (position.x <= _boardBounds.x + WidthBoundMultiplier * _cameraWidth && position.y <= _boardBounds.y + HeightBoundMultiplier * _cameraHeight) {
-							transform.position += new Vector3 (Input.GetAxisRaw ("Mouse X") * Time.deltaTime * _speed, 0.0f, Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * _speed);
+							transform.position += new Vector3 (Input.GetAxisRaw ("Mouse X") * Time.deltaTime * DragVelocity, 0.0f, Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * DragVelocity);
 						}
 					} else if (Input.GetAxis ("Mouse X") < 0) {
 						if (position.x >= -_boardBounds.x - WidthBoundMultiplier * _cameraWidth && position.y >= -_boardBounds.y - HeightBoundMultiplier * _cameraHeight) {
-							transform.position += new Vector3 (Input.GetAxisRaw ("Mouse X") * Time.deltaTime * _speed, 0.0f, Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * _speed);
+							transform.position += new Vector3 (Input.GetAxisRaw ("Mouse X") * Time.deltaTime * DragVelocity, 0.0f, Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * DragVelocity);
 						}
 					}
 				}
