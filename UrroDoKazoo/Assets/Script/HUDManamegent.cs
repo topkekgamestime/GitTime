@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUDManamegent : MonoBehaviour {
 
@@ -31,5 +32,12 @@ public class HUDManamegent : MonoBehaviour {
 		Humor.value = y;
 		Treta.value = z;
 		kazoos.text = money.ToString();
+
+		if(Input.GetKeyDown("space"))
+			{
+			SceneManager.LoadScene (3);
+				Debug.Log("Pause");
+
+			}
 	}
 }
