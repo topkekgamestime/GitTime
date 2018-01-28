@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class IsVisible : MonoBehaviour {
 
+	public Animator personAnim;
 
 	void Update()
 	{
 		if (GetComponent<Renderer> ().IsVisibleFrom (Camera.main)) {
+			//fofo,humor,tragedia
 			
-			if (gameObject.GetComponent<Animation> ().IsPlaying ("evento_fofo2")) {
+			if (personAnim.GetCurrentAnimatorStateInfo(0).IsName("fofo")) {
 				Debug.Log ("Fofo");
-			} else if (gameObject.GetComponent<Animation> ().IsPlaying("evento_tragedia1")) {
+			} else if (personAnim.GetCurrentAnimatorStateInfo(0).IsName("tragedia")) {
 				Debug.Log ("Tragedia");
-			} else if (gameObject.GetComponent<Animation> ().IsPlaying ("evento_humor1")) {
+			} else if (personAnim.GetCurrentAnimatorStateInfo(0).IsName("humor")) {
 				Debug.Log ("Humor");
 			}
-			Debug.Log ("AAA");
 
 		} else {
 			Debug.Log ("Not visible");
