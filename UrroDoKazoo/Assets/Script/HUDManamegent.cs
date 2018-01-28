@@ -43,6 +43,8 @@ public class HUDManamegent : MonoBehaviour {
 	public float ChaosTimeIncrease = 5.0f;
 	public float ChaosIncrease = 1.0f;
 
+	private float _money;
+
 	// Use this for initialization
 	void Start () {
 
@@ -52,6 +54,7 @@ public class HUDManamegent : MonoBehaviour {
 
 		StartCoroutine (PerderPonto ());
 		StartCoroutine (AumentarChaos ());
+		StartCoroutine (Dinheiro ());
 
 	}
 
@@ -63,8 +66,7 @@ public class HUDManamegent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		money = (32*(75*x + 95*y + 140*z) + 3*(x+y+z+56*(x+y)/27))-347951;
-		realmoney = Mathf.RoundToInt (money);
+		realmoney = Mathf.RoundToInt (_money);
 		aud = (x + y + z) / 3;
 		Fofo.value = x;
 		Humor.value = y;
@@ -101,11 +103,7 @@ public class HUDManamegent : MonoBehaviour {
 
 
 		}
-
-		if (x == 0 || y == 0 || z == 0) {
-			Debug.Log ("Perdeu lixo");
-		}
-
+			
 		if (aud < 0) {
 			SceneManager.LoadScene (5);
 
@@ -149,6 +147,17 @@ public class HUDManamegent : MonoBehaviour {
 			}
 
 			yield return new WaitForSeconds (ChaosTimeIncrease);
+		}
+	}
+
+	IEnumerator Dinheiro(){
+		int j = 0;
+
+		while (j == 0) {
+
+			_money += 1 * aud;
+
+			yield return new WaitForSeconds(0);
 		}
 	}
 }
