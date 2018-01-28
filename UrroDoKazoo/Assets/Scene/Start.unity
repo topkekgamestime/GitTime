@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 1260509999}
   - component: {fileID: 1260509998}
   - component: {fileID: 1260509997}
+  - component: {fileID: 1260509996}
   - component: {fileID: 1260510000}
   m_Layer: 0
   m_Name: Main Camera
@@ -719,6 +720,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!81 &1260509996
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1260509995}
+  m_Enabled: 1
 --- !u!124 &1260509997
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1213,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1989808431}
   - component: {fileID: 1989808430}
-  - component: {fileID: 1989808432}
   m_Layer: 0
   m_Name: StartSong
   m_TagString: Untagged
@@ -1306,13 +1313,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1989808432
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1989808429}
-  m_Enabled: 1
 --- !u!1 &2105057608
 GameObject:
   m_ObjectHideFlags: 0
