@@ -15,6 +15,7 @@ public class HUDManamegent : MonoBehaviour {
 	[Range(0,9999999)]
 	public int money = 0;
 	public Text kazoos;
+	public int caos;
 
 	public Slider Fofo;
 	public Slider Humor;
