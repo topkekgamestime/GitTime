@@ -24,7 +24,7 @@ public class Resume : MonoBehaviour {
 
 	IEnumerator Voltando()
 	{
-		yield return new WaitForSecondsRealtime(3.5f);
+		yield return new WaitForSecondsRealtime(3.15f);
 		SceneManager.LoadScene (1);
 		Debug.Log("Resume");
 	}
