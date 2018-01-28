@@ -61,11 +61,11 @@ public class HUDManamegent : MonoBehaviour {
 	}
 
 
-	IEnumerable PerderPonto(){
+	IEnumerator PerderPonto(){
 		int j = 0;
 
-		while (j == 1) {
-
+		while (j == 0) {
+			
 			x -= PontosPerdidosPorSegundo;
 			y -= PontosPerdidosPorSegundo;
 			z -= PontosPerdidosPorSegundo;
