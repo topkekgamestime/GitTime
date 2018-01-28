@@ -7,8 +7,19 @@ public class IsVisible : MonoBehaviour {
 
 	void Update()
 	{
-		if (GetComponent<Renderer>().IsVisibleFrom(Camera.main)) 
-			Debug.Log("Hahaha");
-		else Debug.Log("Not visible");
+		if (GetComponent<Renderer> ().IsVisibleFrom (Camera.main)) {
+			
+			if (gameObject.GetComponent<Animation> ().IsPlaying ("evento_fofo2")) {
+				Debug.Log ("Fofo");
+			} else if (gameObject.GetComponent<Animation> ().IsPlaying("evento_tragedia1")) {
+				Debug.Log ("Tragedia");
+			} else if (gameObject.GetComponent<Animation> ().IsPlaying ("evento_humor1")) {
+				Debug.Log ("Humor");
+			}
+
+
+		} else {
+			Debug.Log ("Not visible");
+		}
 	}
 }
