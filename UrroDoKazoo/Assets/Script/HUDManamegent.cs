@@ -44,6 +44,7 @@ public class HUDManamegent : MonoBehaviour {
 	public float ChaosMultiplier = 1.0f;
 	public float ChaosTimeIncrease = 5.0f;
 	public float ChaosIncrease = 1.0f;
+	public float LimiteChaos = 100f;
 
 	private float _money;
 
@@ -145,8 +146,10 @@ public class HUDManamegent : MonoBehaviour {
 
 		while (j == 0) {
 
-			ChaosMultiplier += ChaosIncrease;
-
+			if (ChaosMultiplier < LimiteChaos) {
+				ChaosMultiplier += ChaosIncrease;
+			}
+				
 			if (ChaosPorTempo) {
 				if (TempoEntrePontosPerdidos - ChaosMultiplier > 0) {
 					TempoEntrePontosPerdidos -= ChaosMultiplier;
