@@ -45,6 +45,9 @@ public class HUDManamegent : MonoBehaviour {
 	public float ChaosTimeIncrease = 5.0f;
 	public float ChaosIncrease = 1.0f;
 	public float LimiteChaos = 100f;
+	public GameObject OVER;
+	public GameObject musica;
+
 
 	private float _money;
 
@@ -74,7 +77,18 @@ public class HUDManamegent : MonoBehaviour {
 			gameObject.GetComponent<Blink> ()._pause = false;
 		}
 	}
-	
+
+	IEnumerator GameOver(){
+		{
+			musica.SetActive (false);
+			OVER.SetActive (true);
+			yield return new WaitForSecondsRealtime(5.5f);
+			SceneManager.LoadScene (6);
+
+		}
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 		realmoney = Mathf.RoundToInt (_money);
@@ -113,7 +127,7 @@ public class HUDManamegent : MonoBehaviour {
 		}
 			
 		if (aud < 0) {
-			SceneManager.LoadScene (6);
+			StartCoroutine (GameOver ());
 
 		}
 	}
