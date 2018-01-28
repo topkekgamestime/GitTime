@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Board
+  - StartSong
   layers:
   - Default
   - TransparentFX
