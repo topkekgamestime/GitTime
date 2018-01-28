@@ -11,6 +11,9 @@ public class HUDManamegent : MonoBehaviour {
 	public int y;
 	[Range(0,100)]
 	public int z;
+	[Range(0,9999999)]
+	public int money = 0;
+	public Text kazoos;
 
 	public Slider Fofo;
 	public Slider Humor;
@@ -27,7 +30,6 @@ public class HUDManamegent : MonoBehaviour {
 		Fofo.value = x;
 		Humor.value = y;
 		Treta.value = z;
-
-
+		kazoos.text = money.ToString();
 	}
 }

@@ -4671,6 +4671,8 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
+  money: 0
+  kazoos: {fileID: 1985267070}
   Fofo: {fileID: 696454732}
   Humor: {fileID: 1874761112}
   Treta: {fileID: 922827299}
@@ -5535,7 +5537,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 9999999
+  m_Text: 
 --- !u!222 &1985267071
 CanvasRenderer:
   m_ObjectHideFlags: 0
