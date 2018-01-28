@@ -22,6 +22,13 @@ public class HUDManamegent : MonoBehaviour {
 	[Range(0,100)]
 	public float aud;
 
+	public bool IsPaused = false;
+	public GameObject hud01;
+	public GameObject hud02;
+	public GameObject hud03;
+	public GameObject pausemenu;
+
+
 	public Slider Fofo;
 	public Slider Humor;
 	public Slider Treta;
@@ -47,6 +54,12 @@ public class HUDManamegent : MonoBehaviour {
 		StartCoroutine (AumentarChaos ());
 
 	}
+
+	IEnumerator Espera(){
+		{
+			yield return new WaitForSecondsRealtime(0.5f);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -62,8 +75,27 @@ public class HUDManamegent : MonoBehaviour {
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
 		{
-			SceneManager.LoadScene (3);
-				Debug.Log("Pause");
+			if (IsPaused == false) 
+			{ 
+				hud01.SetActive (false);
+				hud02.SetActive (false);
+				hud03.SetActive (false);
+
+				pausemenu.SetActive (true);
+				IsPaused = true;
+				StartCoroutine (Espera ());
+
+			}
+			/*if (IsPaused == true) 
+			{ 
+				hud01.SetActive (true);
+				hud02.SetActive (true);
+				hud03.SetActive (true);
+
+				pausemenu.SetActive (false);
+
+				IsPaused = false;
+			}*/
 		}
 
 		if (x == 0 || y == 0 || z == 0) {
