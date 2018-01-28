@@ -1012,6 +1012,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1114107077861294, guid: 839472514b8bc45d8b331a3a285d3dd6,
     type: 2}
   m_PrefabInternal: {fileID: 758589122}
+--- !u!114 &866624461 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114604954620586042, guid: 839472514b8bc45d8b331a3a285d3dd6,
+    type: 2}
+  m_PrefabInternal: {fileID: 758589122}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &922827299 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114044358236526054, guid: 839472514b8bc45d8b331a3a285d3dd6,
@@ -1252,9 +1258,11 @@ MonoBehaviour:
   money: 0
   kazoos: {fileID: 1985267070}
   caos: 0
+  aud: 0
   Fofo: {fileID: 696454732}
   Humor: {fileID: 1874761112}
   Treta: {fileID: 922827299}
+  Aud: {fileID: 866624461}
 --- !u!4 &1703561747
 Transform:
   m_ObjectHideFlags: 0
