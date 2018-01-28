@@ -1281,7 +1281,6 @@ MonoBehaviour:
   y: 35
   z: 35
   money: 0
-  realmoney: 0
   kazoos: {fileID: 1985267070}
   caos: 0
   aud: 0
@@ -1292,7 +1291,7 @@ MonoBehaviour:
   AudAnim: {fileID: 1304093163}
   PontosPerdidosPorSegundo: 1
   TempoEntrePontosPerdidos: 1
-  ChaosPorTempo: 1
+  ChaosPorTempo: 0
   ChaosMultiplier: 1
   ChaosTimeIncrease: 5
   ChaosIncrease: 1

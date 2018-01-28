@@ -29,7 +29,7 @@ public class HUDManamegent : MonoBehaviour {
 	public Animator AudAnim;
 
 	public float PontosPerdidosPorSegundo = 0.1f;
-	public float TempoEntrePontosPerdidos = 0.5f; // zero perde por frame
+	public float TempoEntrePontosPerdidos = 1.0f; // zero perde por frame
 
 	public bool ChaosPorTempo = false;
 	public float ChaosMultiplier = 1.0f;
@@ -107,7 +107,9 @@ public class HUDManamegent : MonoBehaviour {
 			ChaosMultiplier += ChaosIncrease;
 
 			if (ChaosPorTempo) {
-				TempoEntrePontosPerdidos -= ChaosMultiplier;
+				if (TempoEntrePontosPerdidos - ChaosMultiplier > 0) {
+					TempoEntrePontosPerdidos -= ChaosMultiplier;
+				}
 			}
 
 			yield return new WaitForSeconds (ChaosTimeIncrease);
