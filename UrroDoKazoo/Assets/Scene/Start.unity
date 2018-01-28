@@ -261,8 +261,8 @@ MonoBehaviour:
   AmplitudeX: 1
   AmplitudeY: 4
   Frequencia: 4
-  offsetX: -460
-  offsetY: -760
+  offsetX: -500
+  offsetY: -795
 --- !u!1 &82930400
 GameObject:
   m_ObjectHideFlags: 0

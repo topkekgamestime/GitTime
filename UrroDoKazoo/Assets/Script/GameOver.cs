@@ -2,25 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour {
 
-	public Slider Countdown;
-
-	private float gameover;
-
-
 	void Start () {
-		gameover = Countdown.value;
+
 	}
 
 	void Update () {
-		/*if (gameover != 0) 
-		{
-			gameover = Countdown.value;
-		} 
-
-		else */
-		Debug.Log (gameover);
+		if(Input.GetKeyDown("space"))
+			{
+				SceneManager.LoadScene (0);
+			}
 	}
 }

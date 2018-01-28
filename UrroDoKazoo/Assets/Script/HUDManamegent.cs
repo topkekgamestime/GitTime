@@ -22,14 +22,21 @@ public class HUDManamegent : MonoBehaviour {
 	[Range(0,100)]
 	public float aud;
 
+	public bool IsPaused = false;
+	public GameObject hud01;
+	public GameObject hud02;
+	public GameObject hud03;
+	public GameObject pausemenu;
+
+
 	public Slider Fofo;
 	public Slider Humor;
 	public Slider Treta;
 	public Slider Aud;
 	public Animator AudAnim;
 
-	public float PontosPorSegundo = 0.1f;
-	public float TempoCairPontos = 1.0f; // zero perde por frame
+	public float PontosPerdidosPorSegundo = 0.1f;
+	public float TempoEntrePontosPerdidos = 1.0f; // zero perde por frame
 
 	public bool ChaosPorTempo = false;
 	public float ChaosMultiplier = 1.0f;
@@ -47,6 +54,12 @@ public class HUDManamegent : MonoBehaviour {
 		StartCoroutine (AumentarChaos ());
 
 	}
+
+	IEnumerator Espera(){
+		{
+			yield return new WaitForSecondsRealtime(0.5f);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -62,15 +75,27 @@ public class HUDManamegent : MonoBehaviour {
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
 		{
-			if (Time.timeScale == 0) {
-				Time.timeScale = 1;
-				gameObject.GetComponent<Blink> ()._pause = false;
-			} else {
-				Time.timeScale = 0;
-				gameObject.GetComponent<Blink> ()._pause = true;
+			if (IsPaused == false) 
+			{ 
+				hud01.SetActive (false);
+				hud02.SetActive (false);
+				hud03.SetActive (false);
+
+				pausemenu.SetActive (true);
+				IsPaused = true;
+				StartCoroutine (Espera ());
+
 			}
-			//SceneManager.LoadScene (3);
-				Debug.Log("Pause");
+			/*if (IsPaused == true) 
+			{ 
+				hud01.SetActive (true);
+				hud02.SetActive (true);
+				hud03.SetActive (true);
+
+				pausemenu.SetActive (false);
+
+				IsPaused = false;
+			}*/
 		}
 
 		if (x == 0 || y == 0 || z == 0) {
@@ -81,8 +106,6 @@ public class HUDManamegent : MonoBehaviour {
 			SceneManager.LoadScene (5);
 
 		}
-
-	
 	}
 
 
@@ -93,18 +116,18 @@ public class HUDManamegent : MonoBehaviour {
 
 			if (ChaosPorTempo) {
 
-				x -= PontosPorSegundo;
-				y -= PontosPorSegundo;
-				z -= PontosPorSegundo;
+				x -= PontosPerdidosPorSegundo;
+				y -= PontosPerdidosPorSegundo;
+				z -= PontosPerdidosPorSegundo;
 
 			} else {
 
-				x -= PontosPorSegundo * ChaosMultiplier;
-				y -= PontosPorSegundo * ChaosMultiplier;
-				z -= PontosPorSegundo * ChaosMultiplier;
+				x -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				y -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				z -= PontosPerdidosPorSegundo * ChaosMultiplier;
 			}
 
-			yield return new WaitForSeconds (TempoCairPontos);
+			yield return new WaitForSeconds (TempoEntrePontosPerdidos);
 		}
 	}
 
@@ -116,14 +139,12 @@ public class HUDManamegent : MonoBehaviour {
 			ChaosMultiplier += ChaosIncrease;
 
 			if (ChaosPorTempo) {
-				if (TempoCairPontos - ChaosMultiplier > 0) {
-					TempoCairPontos -= ChaosMultiplier;
+				if (TempoEntrePontosPerdidos - ChaosMultiplier > 0) {
+					TempoEntrePontosPerdidos -= ChaosMultiplier;
 				}
 			}
 
 			yield return new WaitForSeconds (ChaosTimeIncrease);
 		}
 	}
-
-
 }
