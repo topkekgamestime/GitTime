@@ -82,7 +82,7 @@ public class HUDManamegent : MonoBehaviour {
 		{
 			musica.SetActive (false);
 			OVER.SetActive (true);
-			yield return new WaitForSecondsRealtime(5.5f);
+			yield return new WaitForSecondsRealtime(5.0f);
 			SceneManager.LoadScene (6);
 
 		}
