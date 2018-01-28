@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerAnimacoes : MonoBehaviour {
 
 	public int porcentagemAnim;
+	public Animator personAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -25,11 +26,12 @@ public class TriggerAnimacoes : MonoBehaviour {
 		if (random < porcentagemAnim) {
 
 			if (gameObject.name == "TriggerAnimHumor") {
-				Debug.Log("AnimacaoHumor");
+				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("humor");
 			} else if (gameObject.name == "TriggerAnimTragedia") {
-				Debug.Log("AnimacaoTragedia");
+				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("tragedia");
 			} else if (gameObject.name == "TriggerAnimFofo") {
-				Debug.Log("AnimacaoFofo");
+				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("fofo");
+				//personAnim.SetBool ("moving", true);
 			}
 		}
 

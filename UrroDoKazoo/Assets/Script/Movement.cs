@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour {
 
 	public Vector3 initialPosition;
 
+	public Animator personAnim;
+
 
 	private Transform _tr;
 	private Vector3 _pos;
@@ -104,6 +106,11 @@ public class Movement : MonoBehaviour {
 				_flagBaixo = false;
 			}
 		}
+	}
+
+	public void ExecutaAnimacoes(string nome) {
+		personAnim.SetTrigger (nome);
+
 	}
 
 

@@ -16,7 +16,7 @@ public class IsVisible : MonoBehaviour {
 			} else if (gameObject.GetComponent<Animation> ().IsPlaying ("evento_humor1")) {
 				Debug.Log ("Humor");
 			}
-
+			Debug.Log ("AAA");
 
 		} else {
 			Debug.Log ("Not visible");
