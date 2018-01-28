@@ -5,7 +5,7 @@ using UnityEngine;
 public class IsVisible : MonoBehaviour {
 
 	public Animator personAnim;
-	public int pontosDaAnimacao = 50;
+	//public int pontosDaAnimacao = 50;
 	public float segAteContarPontos = 0.5f;
 
 	public float PontosPorSegundos = 1.5f;
