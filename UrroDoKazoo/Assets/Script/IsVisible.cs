@@ -41,7 +41,7 @@ public class IsVisible : MonoBehaviour {
 	void Update()
 	{
 
-		Debug.Log (EstaTocandoAudio () + " Bool");
+		//Debug.Log (EstaTocandoAudio () + " Bool");
 
 		//AudioSource.PlayClipAtPoint (feliz);
 
