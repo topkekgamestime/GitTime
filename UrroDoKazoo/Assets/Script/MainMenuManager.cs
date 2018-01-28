@@ -9,7 +9,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	private bool IsMuted;
 
-	void Awake ()
+	void Start ()
 	{
 		if (IsMuted == true) 
 		{
