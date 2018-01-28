@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1582901f3f810465c8df9850e0aa2ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  porcentagemAnim: 25
+  porcentagemAnim: 100
 --- !u!1 &1321907262
 GameObject:
   m_ObjectHideFlags: 0
