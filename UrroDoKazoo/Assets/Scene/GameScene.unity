@@ -4418,6 +4418,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114153689391128770, guid: e43fc52feb9d64b3d8b8d28cab217691,
+        type: 2}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 1703561745}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e43fc52feb9d64b3d8b8d28cab217691, type: 2}
   m_IsPrefabParent: 0
