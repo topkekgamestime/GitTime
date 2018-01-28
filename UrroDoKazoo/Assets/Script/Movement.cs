@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour {
 		_direcao = Random.Range (1, 4);
 		_personAnim.SetTrigger("humor");
 
-		StartCoroutine (Walk());
+		//StartCoroutine (Walk());
 
 	}
 	
@@ -113,7 +113,7 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void ExecutaAnimacoes(string nome) {
-		_personAnim.Play (nome);
+		//_personAnim.Play (nome);
 
 	}
 
