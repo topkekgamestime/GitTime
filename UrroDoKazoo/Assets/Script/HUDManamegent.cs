@@ -142,9 +142,11 @@ public class HUDManamegent : MonoBehaviour {
 
 				if (x > 0) {
 					x -= PontosPerdidosPorSegundo;
-				} else if (y > 0) {
+				} 
+				if (y > 0) {
 					y -= PontosPerdidosPorSegundo;
-				} else if (z > 0) {
+				} 
+				if (z > 0) {
 					z -= PontosPerdidosPorSegundo;
 				}
 
@@ -152,9 +154,11 @@ public class HUDManamegent : MonoBehaviour {
 				
 				if (x > 0) {
 					x -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				} else if (y > 0) {
+				} 
+				if (y > 0) {
 					y -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				} else if (z > 0) {
+				} 
+				if (z > 0) {
 					z -= PontosPerdidosPorSegundo * ChaosMultiplier;
 				}
 			}
