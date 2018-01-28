@@ -21,6 +21,8 @@ public class TriggerAnimacoes : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 
+		Debug.Log ("KD");
+
 		int random = Random.Range (1, 100);
 
 		if (random < porcentagemAnim) {
