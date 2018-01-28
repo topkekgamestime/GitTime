@@ -112,11 +112,4 @@ public class Movement : MonoBehaviour {
 		}
 	}
 
-	public void ExecutaAnimacoes(string nome) {
-		//_personAnim.Play (nome);
-
-	}
-
-
-
 }
