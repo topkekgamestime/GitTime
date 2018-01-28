@@ -769,32 +769,32 @@ Prefab:
     - target: {fileID: 224202516003168826, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224976713059063664, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224017772414603264, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224854333593040916, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224823049019135998, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224809616044517114, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224628732499789536, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
@@ -809,17 +809,21 @@ Prefab:
     - target: {fileID: 224699922269116870, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224928272528664810, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224824016249462534, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: -201.40002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572574394246928, guid: 839472514b8bc45d8b331a3a285d3dd6, type: 2}
+      propertyPath: m_Name
+      value: Aud
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 839472514b8bc45d8b331a3a285d3dd6, type: 2}
@@ -1186,6 +1190,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1385580101 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114604954620586042, guid: 839472514b8bc45d8b331a3a285d3dd6,
+    type: 2}
+  m_PrefabInternal: {fileID: 672290324}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1703561745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,9 +1230,11 @@ MonoBehaviour:
   money: 0
   kazoos: {fileID: 1985267070}
   caos: 0
+  aud: 0
   Fofo: {fileID: 696454732}
   Humor: {fileID: 1874761112}
   Treta: {fileID: 922827299}
+  Aud: {fileID: 1385580101}
 --- !u!4 &1703561747
 Transform:
   m_ObjectHideFlags: 0
