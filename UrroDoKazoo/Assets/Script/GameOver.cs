@@ -11,6 +11,9 @@ public class GameOver : MonoBehaviour {
 
 	void Start () {
 		pontuacao.text = "0";
+		if (mgn.money > 9999999f) {
+			mgn.money = 9999999f;
+		}
 		pontuacao.text = mgn.money.ToString();
 
 
