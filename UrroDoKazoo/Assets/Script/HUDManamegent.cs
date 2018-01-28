@@ -26,8 +26,17 @@ public class HUDManamegent : MonoBehaviour {
 	public Slider Aud;
 	public Animator AudAnim;
 
+	public float PontosPerdidosPorSegundo = 1.0f;
+	public float TempoEntrePontosPerdidos = 1.0f;
+
 	// Use this for initialization
 	void Start () {
+
+		x = 30.0f;
+		y = 30.0f;
+		z = 30.0f;
+
+		StartCoroutine (PerderPonto ());
 
 	}
 	
@@ -44,6 +53,24 @@ public class HUDManamegent : MonoBehaviour {
 		{
 			SceneManager.LoadScene (3);
 				Debug.Log("Pause");
+		}
+
+		if (x == 0 || y == 0 || z == 0) {
+			Debug.Log ("Perdeu lixo");
+		}
+	}
+
+
+	IEnumerable PerderPonto(){
+		int j = 0;
+
+		while (j == 1) {
+
+			x -= PontosPerdidosPorSegundo;
+			y -= PontosPerdidosPorSegundo;
+			z -= PontosPerdidosPorSegundo;
+
+			yield return new WaitForSeconds (TempoEntrePontosPerdidos);
 		}
 	}
 }
