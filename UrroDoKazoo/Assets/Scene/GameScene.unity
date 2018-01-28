@@ -1206,6 +1206,7 @@ MonoBehaviour:
   HoldMouseTime: 1
   zoomOut: 80
   zoomIn: 20
+  _InZoom: 0
 --- !u!82 &312910444
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4895,6 +4896,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114187910358693166, guid: 776c88690a3774f9b9ae327e74bd08de,
+        type: 2}
+      propertyPath: _personAnim
+      value: 
+      objectReference: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 776c88690a3774f9b9ae327e74bd08de, type: 2}
   m_IsPrefabParent: 0

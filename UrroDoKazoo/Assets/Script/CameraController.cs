@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour {
 	private float _cameraHeight;
 	private Vector3 _boardBounds;
 
-	private bool _InZoom = false;
+	public bool _InZoom = false;
 
 	float minFov = 15f;
 	float maxFov = 90f;
@@ -58,7 +58,15 @@ public class CameraController : MonoBehaviour {
 				float mouseX = board.GetComponent<Collider> ().bounds.size.x / 2 - mouseGamePositionX;
 				float mouseY = board.GetComponent<Collider> ().bounds.size.z / 2 - mouseGamePositionY;
 
-				Camera.main.transform.position = new Vector3 (mouseX, 100, mouseY);
+				if (mouseX < board.GetComponent<Collider> ().bounds.size.x / 2 &&
+					mouseX > -board.GetComponent<Collider> ().bounds.size.x / 2 &&
+					mouseY < board.GetComponent<Collider> ().bounds.size.z / 2 &&
+					mouseY > -board.GetComponent<Collider> ().bounds.size.z / 2) {
+
+					Camera.main.transform.position = new Vector3 (mouseX, 100, mouseY);
+				}
+
+
 
 				//float fov = Mathf.Clamp(5f + 27f, 27f, 5f);
 				//Camera.main.fieldOfView = fov;
