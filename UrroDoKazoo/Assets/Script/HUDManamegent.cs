@@ -191,7 +191,7 @@ public class HUDManamegent : MonoBehaviour {
 
 		while (j == 0) {
 
-			_money += 1 * aud;
+			_money += 0.5f * aud;
 
 			yield return new WaitForSeconds(0);
 		}

@@ -93,14 +93,20 @@ public class IsVisible : MonoBehaviour {
 	void AddPoint(string tipo,float ponto){
 
 		if (tipo == "fofo") {
-			scriptHud.x += ponto;
-			Debug.Log ("fofo ganhou um ponto");
+			if (scriptHud.x <= 100) {
+				scriptHud.x += ponto;
+				Debug.Log ("fofo ganhou um ponto");
+			}
 		} else if (tipo == "tragedia") {
-			scriptHud.z += ponto;
-			Debug.Log ("tragedia ganhou um ponto");
+			if (scriptHud.z <= 100) {
+				scriptHud.z += ponto;
+				Debug.Log ("tragedia ganhou um ponto");
+			}
 		} else if (tipo == "humor") {
-			scriptHud.y += ponto;
-			Debug.Log ("humor ganhou um ponto");
+			if (scriptHud.y <= 100) {
+				scriptHud.y += ponto;
+				Debug.Log ("humor ganhou um ponto");
+			}
 		}
 
 	}
