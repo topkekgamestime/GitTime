@@ -1301,7 +1301,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 731281338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.00024414062, y: 0, z: 0}
   m_LocalScale: {x: 25.41, y: 1, z: 15.07}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1309,7 +1309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &754738123
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2466,9 +2466,11 @@ MonoBehaviour:
   kazoos: {fileID: 1985267070}
   caos: 0
   aud: 0
+  IsPaused: 0
   hud01: {fileID: 30491214}
   hud02: {fileID: 1989623183}
   hud03: {fileID: 1304093159}
+  pausemenu: {fileID: 1480755904}
   Fofo: {fileID: 696454732}
   Humor: {fileID: 1874761112}
   Treta: {fileID: 922827299}
