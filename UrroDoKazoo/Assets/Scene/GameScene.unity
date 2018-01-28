@@ -434,8 +434,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 74485080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 499.5, y: 281, z: 0}
-  m_LocalScale: {x: 0.5203125, y: 0.5203125, z: 0.5203125}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1480755905}
   - {fileID: 1989623184}
@@ -4113,6 +4113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1454184490}
   - component: {fileID: 1454184491}
+  - component: {fileID: 1454184492}
   m_Layer: 0
   m_Name: cenario_fundoestatico
   m_TagString: Untagged
@@ -4177,6 +4178,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!65 &1454184492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1454184489}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50.55324, y: 26.805038, z: 0.20003712}
+  m_Center: {x: -1.2803674, y: 0.053304035, z: 8.3267574e-17}
 --- !u!1 &1480755904
 GameObject:
   m_ObjectHideFlags: 0
@@ -4947,8 +4960,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 58.730453, y: 33.811634, z: 1}
-  m_Center: {x: 0.50065994, y: 0.4432837, z: 1.8156117e-15}
+  m_Size: {x: 58.730453, y: 29.071953, z: 1}
+  m_Center: {x: 0.50065994, y: -0.17444451, z: 2.311624e-15}
 --- !u!1 &1700485630
 GameObject:
   m_ObjectHideFlags: 0
