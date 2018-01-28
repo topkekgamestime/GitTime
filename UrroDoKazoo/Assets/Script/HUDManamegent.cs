@@ -13,12 +13,14 @@ public class HUDManamegent : MonoBehaviour {
 	[Range(0,100)]
 	public float z;
 	[Range(0,9999999)]
-	public int money = 0;
+	public float money = 0.0f;
+	[Range(0,9999999)]
+	public int realmoney = 0;
 	public Text kazoos;
 	[Range(0,100)]
 	public int caos;
 	[Range(0,100)]
-	public int aud;
+	public float aud;
 
 	public Slider Fofo;
 	public Slider Humor;
@@ -32,9 +34,9 @@ public class HUDManamegent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		x = 30.0f;
-		y = 30.0f;
-		z = 30.0f;
+		Fofo.value = 35.0f;
+		Humor.value = 35.0f;
+		Treta.value = 35.0f;
 
 		StartCoroutine (PerderPonto ());
 
@@ -42,12 +44,15 @@ public class HUDManamegent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		money = (32*(75*x + 95*y + 140*z) + 3*(x+y+z+56*(x+y)/27))-347951;
+		realmoney = Mathf.RoundToInt (money);
+		aud = (x + y + z) / 3;
 		Fofo.value = x;
 		Humor.value = y;
 		Treta.value = z;
 		Aud.value = aud;
 		AudAnim.SetFloat("value", Aud.value);
-		kazoos.text = money.ToString();
+		kazoos.text = realmoney.ToString();
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
 		{
@@ -57,6 +62,11 @@ public class HUDManamegent : MonoBehaviour {
 
 		if (x == 0 || y == 0 || z == 0) {
 			Debug.Log ("Perdeu lixo");
+		}
+
+		if (aud < 0) {
+			SceneManager.LoadScene (5);
+
 		}
 	}
 
