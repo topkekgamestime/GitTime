@@ -82,7 +82,7 @@ public class HUDManamegent : MonoBehaviour {
 		{
 			musica.SetActive (false);
 			OVER.SetActive (true);
-			yield return new WaitForSecondsRealtime(5.5f);
+			yield return new WaitForSecondsRealtime(5.0f);
 			SceneManager.LoadScene (6);
 
 		}
@@ -191,7 +191,7 @@ public class HUDManamegent : MonoBehaviour {
 
 		while (j == 0) {
 
-			_money += 1 * aud;
+			_money += 0.5f * aud;
 
 			yield return new WaitForSeconds(0);
 		}
