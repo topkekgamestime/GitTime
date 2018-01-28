@@ -5,11 +5,11 @@ using UnityEngine;
 public class TriggerAnimacoes : MonoBehaviour {
 
 	public int porcentagemAnim;
-	public Animator personAnim;
 
 	// Use this for initialization
 	void Start () {
-		
+
+
 	}
 	
 	// Update is called once per frame
@@ -25,11 +25,16 @@ public class TriggerAnimacoes : MonoBehaviour {
 
 		if (random < porcentagemAnim) {
 
+			Debug.Log ("AAAS");
+
 			if (gameObject.name == "TriggerAnimHumor") {
+				other.gameObject.GetComponent<Animator> ().SetTrigger ("humor");
 				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("humor");
 			} else if (gameObject.name == "TriggerAnimTragedia") {
+				other.gameObject.GetComponent<Animator> ().SetTrigger ("tragedia");
 				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("tragedia");
 			} else if (gameObject.name == "TriggerAnimFofo") {
+				other.gameObject.GetComponent<Animator> ().SetTrigger ("fofo");
 				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("fofo");
 				//personAnim.SetBool ("moving", true);
 			}
@@ -39,9 +44,13 @@ public class TriggerAnimacoes : MonoBehaviour {
 
 	void OnTriggerExit(Collider other){
 
+
+
 	}
 
 	void OntriggerStay(Collider other){
+
+		Debug.Log ("Scrr");
 
 	}
 

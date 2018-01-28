@@ -852,6 +852,8 @@ MonoBehaviour:
   Speed: 50
   Pace: 5
   initialPosition: {x: 0, y: 5, z: 0}
+  personAnim: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
+    type: 2}
 --- !u!114 &114238346137402732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -907,6 +909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e920975b406334d71bf223c2eebf7835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personAnim: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
+    type: 2}
 --- !u!198 &198134165701089186
 ParticleSystem:
   m_ObjectHideFlags: 1

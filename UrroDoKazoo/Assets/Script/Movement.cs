@@ -109,7 +109,7 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void ExecutaAnimacoes(string nome) {
-		personAnim.SetTrigger (nome);
+		personAnim.Play (nome);
 
 	}
 
