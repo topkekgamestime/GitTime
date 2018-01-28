@@ -957,27 +957,27 @@ Prefab:
     - target: {fileID: 224976713059063664, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224017772414603264, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224854333593040916, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224823049019135998, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224809616044517114, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224628732499789536, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
@@ -992,12 +992,12 @@ Prefab:
     - target: {fileID: 224699922269116870, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224928272528664810, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224824016249462534, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
@@ -1282,7 +1282,6 @@ MonoBehaviour:
   y: 35
   z: 35
   money: 0
-  realmoney: 0
   kazoos: {fileID: 1985267070}
   caos: 0
   aud: 0
@@ -1293,7 +1292,7 @@ MonoBehaviour:
   AudAnim: {fileID: 1304093163}
   PontosPerdidosPorSegundo: 1
   TempoEntrePontosPerdidos: 1
-  ChaosPorTempo: 1
+  ChaosPorTempo: 0
   ChaosMultiplier: 1
   ChaosTimeIncrease: 5
   ChaosIncrease: 1
