@@ -42,26 +42,29 @@ public class IsVisible : MonoBehaviour {
 					if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("fofo")) {
 						_fofoTriggered = true;
 						_ultimaAnimacao = "fofo";
+						AddPoint ("fofo",1.5f);
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("tragedia")) {
 						_tragicoTriggered = true;
 						_ultimaAnimacao = "tragedia";
+						AddPoint ("tragedia",1.5f);
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("humor")) {
 						_humorTriggered = true;
 						_ultimaAnimacao = "humor";
+						AddPoint ("humor",1.5f);
 					} else {
 						if (_ultimaAnimacao == "fofo" || _ultimaAnimacao == "tragedia" || _ultimaAnimacao == "humor") {
 							if (_ultimaAnimacao == "fofo") {
 								_fofoTriggered = false;
 								_ultimaAnimacao = "";
-								AddPoint ("fofo");
+								//AddPoint ("fofo",50);
 							} else if (_ultimaAnimacao == "tragedia") {
 								_tragicoTriggered = false;
 								_ultimaAnimacao = "";
-								AddPoint ("tragedia");
+								//AddPoint ("tragedia",50);
 							} else if (_ultimaAnimacao == "humor") {
 								_humorTriggered = false;
 								_ultimaAnimacao = "";
-								AddPoint ("humor");
+								//AddPoint ("humor",50);
 							}
 						}
 					}
@@ -73,16 +76,21 @@ public class IsVisible : MonoBehaviour {
 		}
 	}
 
-	void AddPoint(string tipo){
+	void AddPoint(string tipo,float ponto){
 
 		if (tipo == "fofo") {
+			scriptHud.x += ponto;
 			Debug.Log ("fofo ganhou um ponto");
 		} else if (tipo == "tragedia") {
+			scriptHud.z += ponto;
 			Debug.Log ("tragedia ganhou um ponto");
 		} else if (tipo == "humor") {
+			scriptHud.y += ponto;
 			Debug.Log ("humor ganhou um ponto");
 		}
 
 	}
+
+
 
 }

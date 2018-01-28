@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class HUDManamegent : MonoBehaviour {
 
 	[Range(0,100)]
-	public int x;
+	public float x;
 	[Range(0,100)]
-	public int y;
+	public float y;
 	[Range(0,100)]
-	public int z;
+	public float z;
 	[Range(0,9999999)]
 	public int money = 0;
 	public Text kazoos;
@@ -40,10 +40,9 @@ public class HUDManamegent : MonoBehaviour {
 		kazoos.text = money.ToString();
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
-			{
+		{
 			SceneManager.LoadScene (3);
 				Debug.Log("Pause");
-
-			}
+		}
 	}
 }
