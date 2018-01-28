@@ -92,8 +92,8 @@ public class Movement : MonoBehaviour {
 
 		while (f == 0) {
 
-			int random = Random.Range (1, 100);
-			int anim = Random.Range (1, 3);
+			int random = Random.Range (1, 101);
+			int anim = Random.Range (1, 4);
 
 			if (random < ChanceAnimacoes) {
 
