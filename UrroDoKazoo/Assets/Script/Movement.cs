@@ -7,6 +7,10 @@ public class Movement : MonoBehaviour {
 	public float Speed = 2.0f;
 	public float Pace = 2.0f;
 
+	public float TempoDeEspera = 5.0f;
+	public int ChanceAnimacoes = 5;
+
+
 	public Vector3 initialPosition;
 
 	public Animator personAnim;
@@ -34,6 +38,7 @@ public class Movement : MonoBehaviour {
 		//_personAnim.SetTrigger("humor");
 
 		//StartCoroutine (Walk());
+		StartCoroutine (TriggaAnimacao());
 
 	}
 	
@@ -73,14 +78,38 @@ public class Movement : MonoBehaviour {
 					_direcao = 0;
 				}
 
-					transform.position = Vector3.MoveTowards(transform.position, _pos, Time.deltaTime * Speed);
-			//}
-			//}
+				transform.position = Vector3.MoveTowards(transform.position, _pos, Time.deltaTime * Speed);
+
 
 			yield return new WaitForSeconds(0.5f);
 
 		}
 
+	}
+
+	IEnumerator TriggaAnimacao(){
+		int f = 0;
+
+		while (f == 0) {
+
+			int random = Random.Range (1, 100);
+			int anim = Random.Range (1, 3);
+
+			if (random < ChanceAnimacoes) {
+
+				if (anim == 1) {
+					_personAnim.SetTrigger ("humor");
+				} else if (anim == 2) {
+					_personAnim.SetTrigger ("tragedia");
+				} else if (anim == 3) {
+					_personAnim.SetTrigger ("fofo");
+				} else {
+					f = 1;
+				}
+			}
+
+			yield return new WaitForSeconds(TempoDeEspera);
+		}
 	}
 
 	// funcao que muda a direção caso entre em colisão com algo
