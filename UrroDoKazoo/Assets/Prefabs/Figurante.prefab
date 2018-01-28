@@ -868,7 +868,7 @@ MonoBehaviour:
   Speed: 50
   Pace: 5
   initialPosition: {x: 0, y: 5, z: 0}
-  _personAnim: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
+  personAnim: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
     type: 2}
 --- !u!114 &114238346137402732
 MonoBehaviour:
@@ -927,6 +927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personAnim: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
     type: 2}
+  pontosDaAnimacao: 50
+  hudManager: {fileID: 0}
 --- !u!198 &198134165701089186
 ParticleSystem:
   m_ObjectHideFlags: 1

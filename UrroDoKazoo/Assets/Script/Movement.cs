@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour {
 
 	public Vector3 initialPosition;
 
-	public Animator _personAnim;
+	public Animator personAnim;
 	private Transform _trGraphics;
 	private Transform _tr;
 	private Vector3 _pos;
@@ -21,15 +21,17 @@ public class Movement : MonoBehaviour {
 	private bool _flagAtras = false;
 	private bool _flagBaixo = false;
 
+	private Animator _personAnim;
 
 	// Use this for initialization
 	void Start () {
-		
+
+		//_personAnim = gameObject.GetComponent<Animator> ();
 		_personAnim = this.gameObject.GetComponentInChildren(typeof(Animator)) as Animator;
 		_trGraphics = this.gameObject.transform.GetChild(4).transform;
 		_tr = gameObject.transform;
 		_direcao = Random.Range (1, 4);
-		_personAnim.SetTrigger("humor");
+		//_personAnim.SetTrigger("humor");
 
 		//StartCoroutine (Walk());
 
