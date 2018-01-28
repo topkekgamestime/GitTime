@@ -867,6 +867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 50
   Pace: 5
+  TempoDeEspera: 5
+  ChanceAnimacoes: 5
   initialPosition: {x: 0, y: 5, z: 0}
   personAnim: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
     type: 2}
@@ -927,8 +929,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personAnim: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
     type: 2}
-  pontosDaAnimacao: 50
+  feliz: {fileID: 0}
+  tragico: {fileID: 0}
+  humor: {fileID: 0}
   segAteContarPontos: 0.5
+  PontosPorSegundos: 1.5
   hudManager: {fileID: 0}
 --- !u!198 &198134165701089186
 ParticleSystem:
