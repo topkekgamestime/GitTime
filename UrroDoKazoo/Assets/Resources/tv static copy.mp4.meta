@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: cd35813066c5840ef8ee4e8132cd8880
-timeCreated: 1517109347
+guid: 53a85e69118794882a82494391b6539d
+timeCreated: 1517137492
 licenseType: Free
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
-  useLegacyImporter: 0
+  useLegacyImporter: 1
   quality: 0.5
   isColorLinear: 0
   originalWidth: 854
