@@ -45,6 +45,9 @@ public class HUDManamegent : MonoBehaviour {
 	public float ChaosTimeIncrease = 5.0f;
 	public float ChaosIncrease = 1.0f;
 	public float LimiteChaos = 100f;
+	public GameObject OVER;
+	public GameObject musica;
+
 
 	private float _money;
 
@@ -74,7 +77,18 @@ public class HUDManamegent : MonoBehaviour {
 			gameObject.GetComponent<Blink> ()._pause = false;
 		}
 	}
-	
+
+	IEnumerator GameOver(){
+		{
+			musica.SetActive (false);
+			OVER.SetActive (true);
+			yield return new WaitForSecondsRealtime(5.5f);
+			SceneManager.LoadScene (6);
+
+		}
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 		realmoney = Mathf.RoundToInt (_money);
@@ -113,7 +127,7 @@ public class HUDManamegent : MonoBehaviour {
 		}
 			
 		if (aud < 0) {
-			SceneManager.LoadScene (6);
+			StartCoroutine (GameOver ());
 
 		}
 	}
@@ -128,9 +142,11 @@ public class HUDManamegent : MonoBehaviour {
 
 				if (x > 0) {
 					x -= PontosPerdidosPorSegundo;
-				} else if (y > 0) {
+				} 
+				if (y > 0) {
 					y -= PontosPerdidosPorSegundo;
-				} else if (z > 0) {
+				} 
+				if (z > 0) {
 					z -= PontosPerdidosPorSegundo;
 				}
 
@@ -138,9 +154,11 @@ public class HUDManamegent : MonoBehaviour {
 				
 				if (x > 0) {
 					x -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				} else if (y > 0) {
+				} 
+				if (y > 0) {
 					y -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				} else if (z > 0) {
+				} 
+				if (z > 0) {
 					z -= PontosPerdidosPorSegundo * ChaosMultiplier;
 				}
 			}
