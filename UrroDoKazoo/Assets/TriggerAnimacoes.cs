@@ -21,25 +21,25 @@ public class TriggerAnimacoes : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 
-		/*GameObject item = other.gameObject;
+		GameObject item = other.gameObject;
 
 		if (other.name != "Figurante") {
 			item = other.gameObject.transform.parent.gameObject;
 		}
-*/
+
 		//if (other.tag == "Figurante") {
 		int random = Random.Range (1, 100);
 
 		if (random < porcentagemAnim) {
 
 			if (gameObject.name == "TriggerAnimHumor") {
-				//item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("humor");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("humor");
 				//item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("humor");
 			} else if (gameObject.name == "TriggerAnimTragedia") {
-				//item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("tragedia");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("tragedia");
 				//item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("tragedia");
 			} else if (gameObject.name == "TriggerAnimFofo") {
-				//item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("fofo");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("fofo");
 				//item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("fofo");
 					//personAnim.SetBool ("moving", true);
 			}
