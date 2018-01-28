@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blinkable: {fileID: 2097814775}
-  time: 0.46154
+  time: 0.46153846
 --- !u!1 &647053622
 GameObject:
   m_ObjectHideFlags: 0
