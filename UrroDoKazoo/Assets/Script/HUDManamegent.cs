@@ -21,7 +21,9 @@ public class HUDManamegent : MonoBehaviour {
 	public int caos;
 	[Range(0,100)]
 	public float aud;
+	public AudioClip Corta;
 
+	public GameObject Voltamos;
 	public bool IsPaused = false;
 	public GameObject hud01;
 	public GameObject hud02;
@@ -42,6 +44,9 @@ public class HUDManamegent : MonoBehaviour {
 	public float ChaosMultiplier = 1.0f;
 	public float ChaosTimeIncrease = 5.0f;
 	public float ChaosIncrease = 1.0f;
+	public float LimiteChaos = 100f;
+
+	private float _money;
 
 	// Use this for initialization
 	void Start () {
@@ -52,19 +57,27 @@ public class HUDManamegent : MonoBehaviour {
 
 		StartCoroutine (PerderPonto ());
 		StartCoroutine (AumentarChaos ());
+		StartCoroutine (Dinheiro ());
 
 	}
 
 	IEnumerator Espera(){
 		{
-			yield return new WaitForSecondsRealtime(0.5f);
+			yield return new WaitForSecondsRealtime(3.2f);
+			hud01.SetActive (true);
+			hud02.SetActive (true);
+			hud03.SetActive (true);
+
+			pausemenu.SetActive (false);
+
+			Time.timeScale = 1;
+			gameObject.GetComponent<Blink> ()._pause = false;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		money = (32*(75*x + 95*y + 140*z) + 3*(x+y+z+56*(x+y)/27))-347951;
-		realmoney = Mathf.RoundToInt (money);
+		realmoney = Mathf.RoundToInt (_money);
 		aud = (x + y + z) / 3;
 		Fofo.value = x;
 		Humor.value = y;
@@ -75,37 +88,32 @@ public class HUDManamegent : MonoBehaviour {
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
 		{
-			if (IsPaused == false) 
-			{ 
+			
+			if (Time.timeScale == 0) {
+
+				Voltamos.SetActive (true);
+				StartCoroutine (Espera());
+			} else {
+				
+				//AudioSource.PlayClipAtPoint (Corta, transform.position);
+
+				Voltamos.SetActive (false);
 				hud01.SetActive (false);
 				hud02.SetActive (false);
 				hud03.SetActive (false);
 
 				pausemenu.SetActive (true);
-				IsPaused = true;
-				StartCoroutine (Espera ());
-
+				Time.timeScale = 0;
+				gameObject.GetComponent<Blink> ()._pause = true;
 			}
-			/*if (IsPaused == true) 
-			{ 
-				hud01.SetActive (true);
-				hud02.SetActive (true);
-				hud03.SetActive (true);
+				//SceneManager.LoadScene (4);
+			Debug.Log("Pause");
 
 
-
-				pausemenu.SetActive (false);
-
-				IsPaused = false;
-			}*/
 		}
-
-		if (x == 0 || y == 0 || z == 0) {
-			Debug.Log ("Perdeu lixo");
-		}
-
+			
 		if (aud < 0) {
-			SceneManager.LoadScene (5);
+			SceneManager.LoadScene (6);
 
 		}
 	}
@@ -138,8 +146,10 @@ public class HUDManamegent : MonoBehaviour {
 
 		while (j == 0) {
 
-			ChaosMultiplier += ChaosIncrease;
-
+			if (ChaosMultiplier < LimiteChaos) {
+				ChaosMultiplier += ChaosIncrease;
+			}
+				
 			if (ChaosPorTempo) {
 				if (TempoEntrePontosPerdidos - ChaosMultiplier > 0) {
 					TempoEntrePontosPerdidos -= ChaosMultiplier;
@@ -147,6 +157,17 @@ public class HUDManamegent : MonoBehaviour {
 			}
 
 			yield return new WaitForSeconds (ChaosTimeIncrease);
+		}
+	}
+
+	IEnumerator Dinheiro(){
+		int j = 0;
+
+		while (j == 0) {
+
+			_money += 1 * aud;
+
+			yield return new WaitForSeconds(0);
 		}
 	}
 }

@@ -21,18 +21,18 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void Back()
 		{
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene (1);
 	
 		}
 
 	public void Play()
 		{
-			SceneManager.LoadScene (4);
+			SceneManager.LoadScene (5);
 		}
 
 	public void Credits()
 		{
-			SceneManager.LoadScene (2);
+			SceneManager.LoadScene (3);
 		}
 
 	public void Quit()
