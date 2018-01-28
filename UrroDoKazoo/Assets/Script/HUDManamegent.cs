@@ -75,29 +75,31 @@ public class HUDManamegent : MonoBehaviour {
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
 		{
-			if (IsPaused == false) 
-			{ 
+			
+			if (Time.timeScale == 0) {
+
+				hud01.SetActive (true);
+				hud02.SetActive (true);
+				hud03.SetActive (true);
+
+				pausemenu.SetActive (false);
+
+				Time.timeScale = 1;
+				gameObject.GetComponent<Blink> ()._pause = false;
+			} else {
+
 				hud01.SetActive (false);
 				hud02.SetActive (false);
 				hud03.SetActive (false);
 
 				pausemenu.SetActive (true);
-				IsPaused = true;
-				StartCoroutine (Espera ());
-
+				Time.timeScale = 0;
+				gameObject.GetComponent<Blink> ()._pause = true;
 			}
-			/*if (IsPaused == true) 
-			{ 
-				hud01.SetActive (true);
-				hud02.SetActive (true);
-				hud03.SetActive (true);
+				//SceneManager.LoadScene (3);
+			Debug.Log("Pause");
 
 
-
-				pausemenu.SetActive (false);
-
-				IsPaused = false;
-			}*/
 		}
 
 		if (x == 0 || y == 0 || z == 0) {
