@@ -41,6 +41,8 @@ public class IsVisible : MonoBehaviour {
 	void Update()
 	{
 
+		Debug.Log (EstaTocandoAudio () + " Bool");
+
 		//AudioSource.PlayClipAtPoint (feliz);
 
 		if (this.GetComponent<Renderer> ().isVisible) {
@@ -103,15 +105,15 @@ public class IsVisible : MonoBehaviour {
 
 	}
 
-	/*bool EstaTocandoAudio() {
-		string audio = gameObject.transform.parent.Find ("One_shot_audio");
+	bool EstaTocandoAudio() {
+		Transform audio = gameObject.transform.parent.Find ("One_shot_audio");
 
-		if (audio == null) {
+		if (audio.name == null) {
 			return true;
 		} else {
 			return false;
 		}
-	}*/
+	}
 
 
 
