@@ -15,11 +15,15 @@ public class HUDManamegent : MonoBehaviour {
 	[Range(0,9999999)]
 	public int money = 0;
 	public Text kazoos;
+	[Range(0,100)]
 	public int caos;
+	[Range(0,100)]
+	public int aud;
 
 	public Slider Fofo;
 	public Slider Humor;
 	public Slider Treta;
+	public Slider Aud;
 
 
 	// Use this for initialization
@@ -32,9 +36,10 @@ public class HUDManamegent : MonoBehaviour {
 		Fofo.value = x;
 		Humor.value = y;
 		Treta.value = z;
+		Aud.value = aud;
 		kazoos.text = money.ToString();
 
-		if(Input.GetKeyDown("escape"))
+		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
 			{
 			SceneManager.LoadScene (3);
 				Debug.Log("Pause");
