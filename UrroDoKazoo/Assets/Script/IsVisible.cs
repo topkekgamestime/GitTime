@@ -8,6 +8,8 @@ public class IsVisible : MonoBehaviour {
 	public int pontosDaAnimacao = 50;
 	public float segAteContarPontos = 0.5f;
 
+	public float PontosPorSegundos = 1.5f;
+
 	public GameObject hudManager;
 
 	private HUDManamegent scriptHud;
@@ -42,15 +44,15 @@ public class IsVisible : MonoBehaviour {
 					if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("fofo")) {
 						_fofoTriggered = true;
 						_ultimaAnimacao = "fofo";
-						AddPoint ("fofo",1.5f);
+						AddPoint ("fofo",PontosPorSegundos);
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("tragedia")) {
 						_tragicoTriggered = true;
 						_ultimaAnimacao = "tragedia";
-						AddPoint ("tragedia",1.5f);
+						AddPoint ("tragedia",PontosPorSegundos);
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("humor")) {
 						_humorTriggered = true;
 						_ultimaAnimacao = "humor";
-						AddPoint ("humor",1.5f);
+						AddPoint ("humor",PontosPorSegundos);
 					} else {
 						if (_ultimaAnimacao == "fofo" || _ultimaAnimacao == "tragedia" || _ultimaAnimacao == "humor") {
 							if (_ultimaAnimacao == "fofo") {
