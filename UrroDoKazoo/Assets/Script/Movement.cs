@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
 	public float Speed = 2.0f;
-	public float Pace = 4.0f;
+	public float Pace = 2.0f;
 
 	public Vector3 initialPosition;
 
@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour {
 		_tr = gameObject.transform;
 		_direcao = Random.Range (1, 4);
 
-		StartCoroutine (Walk());
+		//StartCoroutine (Walk());
 
 	}
 	
