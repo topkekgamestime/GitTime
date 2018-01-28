@@ -28,8 +28,8 @@ public class HUDManamegent : MonoBehaviour {
 	public Slider Aud;
 	public Animator AudAnim;
 
-	public float PontosPerdidosPorSegundo = 0.1f;
-	public float TempoEntrePontosPerdidos = 1.0f; // zero perde por frame
+	public float PontosPorSegundo = 0.1f;
+	public float TempoCairPontos = 1.0f; // zero perde por frame
 
 	public bool ChaosPorTempo = false;
 	public float ChaosMultiplier = 1.0f;
@@ -62,7 +62,14 @@ public class HUDManamegent : MonoBehaviour {
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
 		{
-			SceneManager.LoadScene (3);
+			if (Time.timeScale == 0) {
+				Time.timeScale = 1;
+				gameObject.GetComponent<Blink> ()._pause = false;
+			} else {
+				Time.timeScale = 0;
+				gameObject.GetComponent<Blink> ()._pause = true;
+			}
+			//SceneManager.LoadScene (3);
 				Debug.Log("Pause");
 		}
 
@@ -74,6 +81,8 @@ public class HUDManamegent : MonoBehaviour {
 			SceneManager.LoadScene (5);
 
 		}
+
+	
 	}
 
 
@@ -84,18 +93,18 @@ public class HUDManamegent : MonoBehaviour {
 
 			if (ChaosPorTempo) {
 
-				x -= PontosPerdidosPorSegundo;
-				y -= PontosPerdidosPorSegundo;
-				z -= PontosPerdidosPorSegundo;
+				x -= PontosPorSegundo;
+				y -= PontosPorSegundo;
+				z -= PontosPorSegundo;
 
 			} else {
 
-				x -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				y -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				z -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				x -= PontosPorSegundo * ChaosMultiplier;
+				y -= PontosPorSegundo * ChaosMultiplier;
+				z -= PontosPorSegundo * ChaosMultiplier;
 			}
 
-			yield return new WaitForSeconds (TempoEntrePontosPerdidos);
+			yield return new WaitForSeconds (TempoCairPontos);
 		}
 	}
 
@@ -107,12 +116,14 @@ public class HUDManamegent : MonoBehaviour {
 			ChaosMultiplier += ChaosIncrease;
 
 			if (ChaosPorTempo) {
-				if (TempoEntrePontosPerdidos - ChaosMultiplier > 0) {
-					TempoEntrePontosPerdidos -= ChaosMultiplier;
+				if (TempoCairPontos - ChaosMultiplier > 0) {
+					TempoCairPontos -= ChaosMultiplier;
 				}
 			}
 
 			yield return new WaitForSeconds (ChaosTimeIncrease);
 		}
 	}
+
+
 }
