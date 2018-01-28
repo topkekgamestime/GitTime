@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Start ()
 	{
+		
 		if (IsMuted == true) 
 		{
 			vol.GetComponent<AudioListener> ().enabled = false;
