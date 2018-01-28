@@ -34,6 +34,8 @@ public class TriggerAnimacoes : MonoBehaviour {
 
 			Animator anim = item.gameObject.GetComponentInChildren (typeof(Animator)) as Animator;
 
+			Debug.Log ("AAA");
+
 			if (gameObject.name == "TriggerAnimHumor") {
 				//item.gameObject.GetComponent<Animator> ().SetTrigger ("humor");
 				anim.SetTrigger("humor");

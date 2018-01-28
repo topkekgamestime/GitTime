@@ -8,10 +8,6 @@ public class IsVisible : MonoBehaviour {
 	public int pontosDaAnimacao = 50;
 	public float segAteContarPontos = 0.5f;
 
-	//private float _FofoPoint = 0.0f;
-	//private float _TragediaPoint = 0.0f;
-	//private float _HumorPoint = 0.0f;
-
 	public GameObject hudManager;
 
 	private HUDManamegent scriptHud;
@@ -28,7 +24,6 @@ public class IsVisible : MonoBehaviour {
 	void Start(){
 
 		scriptHud = hudManager.GetComponent<HUDManamegent> (); 
-		//_personAnim = gameObject.GetComponent<Animator> ();
 		_personAnim = this.gameObject.GetComponentInChildren (typeof(Animator)) as Animator;
 
 	}

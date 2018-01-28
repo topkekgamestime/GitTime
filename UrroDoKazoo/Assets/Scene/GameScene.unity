@@ -155,6 +155,11 @@ Prefab:
       propertyPath: m_Name
       value: Figurante (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114514753521007378, guid: 776c88690a3774f9b9ae327e74bd08de,
+        type: 2}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 1703561745}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 776c88690a3774f9b9ae327e74bd08de, type: 2}
   m_IsPrefabParent: 0
@@ -201,6 +206,11 @@ Prefab:
       propertyPath: m_Name
       value: Figurante (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114514753521007378, guid: 776c88690a3774f9b9ae327e74bd08de,
+        type: 2}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 1703561745}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 776c88690a3774f9b9ae327e74bd08de, type: 2}
   m_IsPrefabParent: 0
@@ -557,6 +567,7 @@ GameObject:
   - component: {fileID: 440552211}
   - component: {fileID: 440552210}
   - component: {fileID: 440552209}
+  - component: {fileID: 440552212}
   m_Layer: 0
   m_Name: TriggerAnimFofo
   m_TagString: Untagged
@@ -623,6 +634,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &440552212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 440552208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1582901f3f810465c8df9850e0aa2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porcentagemAnim: 100
 --- !u!1001 &461823302
 Prefab:
   m_ObjectHideFlags: 0
@@ -666,6 +689,11 @@ Prefab:
       propertyPath: m_Name
       value: Figurante (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114514753521007378, guid: 776c88690a3774f9b9ae327e74bd08de,
+        type: 2}
+      propertyPath: hudManager
+      value: 
+      objectReference: {fileID: 1703561745}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 776c88690a3774f9b9ae327e74bd08de, type: 2}
   m_IsPrefabParent: 0
@@ -679,12 +707,12 @@ Prefab:
     - target: {fileID: 224767539286655172, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 960
+      value: 375.5
       objectReference: {fileID: 0}
     - target: {fileID: 224767539286655172, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 540
+      value: 122.5
       objectReference: {fileID: 0}
     - target: {fileID: 224767539286655172, guid: 839472514b8bc45d8b331a3a285d3dd6,
         type: 2}
@@ -975,6 +1003,7 @@ GameObject:
   - component: {fileID: 754738126}
   - component: {fileID: 754738125}
   - component: {fileID: 754738124}
+  - component: {fileID: 754738127}
   m_Layer: 0
   m_Name: TriggerAnimTragedia
   m_TagString: Untagged
@@ -1041,6 +1070,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &754738127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754738123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1582901f3f810465c8df9850e0aa2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porcentagemAnim: 100
 --- !u!1 &791483493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1182,7 @@ GameObject:
   - component: {fileID: 1253486935}
   - component: {fileID: 1253486936}
   - component: {fileID: 1253486937}
+  - component: {fileID: 1253486938}
   m_Layer: 0
   m_Name: TriggerAnimHumor
   m_TagString: Untagged
@@ -1207,6 +1249,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1253486938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253486934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1582901f3f810465c8df9850e0aa2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porcentagemAnim: 100
 --- !u!1 &1321907262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,12 +1473,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114187910358693166, guid: 776c88690a3774f9b9ae327e74bd08de,
+    - target: {fileID: 114514753521007378, guid: 776c88690a3774f9b9ae327e74bd08de,
         type: 2}
-      propertyPath: _personAnim
+      propertyPath: hudManager
       value: 
-      objectReference: {fileID: 95340530491268176, guid: 9c890b3c9df5041058b009837140ecbd,
-        type: 2}
+      objectReference: {fileID: 1703561745}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 776c88690a3774f9b9ae327e74bd08de, type: 2}
   m_IsPrefabParent: 0
