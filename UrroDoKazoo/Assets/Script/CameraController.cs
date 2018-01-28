@@ -62,9 +62,9 @@ public class CameraController : MonoBehaviour {
 
 				//float fov = Mathf.Clamp(5f + 27f, 27f, 5f);
 				//Camera.main.fieldOfView = fov;
-				Camera.main.orthographicSize = zoomOut;
+				Camera.main.orthographicSize = zoomIn;
 
-				_InZoom = true;
+				_InZoom = true; 
 
 				if (_InZoom) {
 
@@ -90,7 +90,7 @@ public class CameraController : MonoBehaviour {
 			if (_InZoom) {
 				//float fov = Mathf.Clamp (5f + 27f, 5f, 27f);
 				//Camera.main.fieldOfView = fov;
-				Camera.main.orthographicSize = zoomIn;
+				Camera.main.orthographicSize = zoomOut;
 				transform.position = _initialCameraPos;
 
 				_InZoom = false;
