@@ -21,7 +21,9 @@ public class HUDManamegent : MonoBehaviour {
 	public int caos;
 	[Range(0,100)]
 	public float aud;
+	public AudioClip Corta;
 
+	public GameObject Voltamos;
 	public bool IsPaused = false;
 	public GameObject hud01;
 	public GameObject hud02;
@@ -57,7 +59,15 @@ public class HUDManamegent : MonoBehaviour {
 
 	IEnumerator Espera(){
 		{
-			yield return new WaitForSecondsRealtime(0.5f);
+			yield return new WaitForSecondsRealtime(3.2f);
+			hud01.SetActive (true);
+			hud02.SetActive (true);
+			hud03.SetActive (true);
+
+			pausemenu.SetActive (false);
+
+			Time.timeScale = 1;
+			gameObject.GetComponent<Blink> ()._pause = false;
 		}
 	}
 	
@@ -78,16 +88,13 @@ public class HUDManamegent : MonoBehaviour {
 			
 			if (Time.timeScale == 0) {
 
-				hud01.SetActive (true);
-				hud02.SetActive (true);
-				hud03.SetActive (true);
-
-				pausemenu.SetActive (false);
-
-				Time.timeScale = 1;
-				gameObject.GetComponent<Blink> ()._pause = false;
+				Voltamos.SetActive (true);
+				StartCoroutine (Espera());
 			} else {
+				
+				//AudioSource.PlayClipAtPoint (Corta, transform.position);
 
+				Voltamos.SetActive (false);
 				hud01.SetActive (false);
 				hud02.SetActive (false);
 				hud03.SetActive (false);
