@@ -5224,10 +5224,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303b68839420a483092a8d793a73442f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 100
+  x: 0
   y: 0
   z: 0
-  money: 9999999
+  money: 0
   kazoos: {fileID: 1985267070}
   caos: 0
   Fofo: {fileID: 696454732}

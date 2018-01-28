@@ -34,7 +34,7 @@ public class HUDManamegent : MonoBehaviour {
 		Treta.value = z;
 		kazoos.text = money.ToString();
 
-		if(Input.GetKeyDown("space"))
+		if(Input.GetKeyDown("escape"))
 			{
 			SceneManager.LoadScene (3);
 				Debug.Log("Pause");
