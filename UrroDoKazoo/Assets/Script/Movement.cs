@@ -9,9 +9,8 @@ public class Movement : MonoBehaviour {
 
 	public Vector3 initialPosition;
 
-	public Animator personAnim;
-
-
+	private Animator _personAnim;
+	private Transform _trGraphics;
 	private Transform _tr;
 	private Vector3 _pos;
 
@@ -25,11 +24,14 @@ public class Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		
+		_personAnim = this.gameObject.GetComponentInChildren(typeof(Animator)) as Animator;
+		_trGraphics = this.gameObject.transform.GetChild(4).transform;
 		_tr = gameObject.transform;
 		_direcao = Random.Range (1, 4);
+		_personAnim.SetTrigger("humor");
 
-		//StartCoroutine (Walk());
+		StartCoroutine (Walk());
 
 	}
 	
@@ -57,10 +59,12 @@ public class Movement : MonoBehaviour {
 							
 				if (_direcao == 1) {
 					_pos += Vector3.right * Pace;
+					_trGraphics.localScale = new Vector3(-3,3,1);
 				} else if (_direcao == 2) {
 					_pos += Vector3.left * Pace;
 				} else if (_direcao == 3) {
 					_pos += Vector3.forward * Pace;
+					_trGraphics.localScale = new Vector3(3,3,1);
 				} else if (_direcao == 4) {
 					_pos += Vector3.back * Pace;
 				} else {
@@ -109,7 +113,7 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void ExecutaAnimacoes(string nome) {
-		personAnim.Play (nome);
+		_personAnim.Play (nome);
 
 	}
 
