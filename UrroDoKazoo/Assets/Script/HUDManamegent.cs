@@ -26,8 +26,13 @@ public class HUDManamegent : MonoBehaviour {
 	public Slider Aud;
 	public Animator AudAnim;
 
-	public float PontosPerdidosPorSegundo = 1.0f;
-	public float TempoEntrePontosPerdidos = 1.0f;
+	public float PontosPerdidosPorSegundo = 0.1f;
+	public float TempoEntrePontosPerdidos = 0.5f; // zero perde por frame
+
+	public bool ChaosPorTempo = false;
+	public float ChaosMultiplier = 1.0f;
+	public float ChaosTimeIncrease = 5.0f;
+	public float ChaosIncrease = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +42,7 @@ public class HUDManamegent : MonoBehaviour {
 		z = 30.0f;
 
 		StartCoroutine (PerderPonto ());
+		StartCoroutine (AumentarChaos ());
 
 	}
 	
@@ -65,12 +71,36 @@ public class HUDManamegent : MonoBehaviour {
 		int j = 0;
 
 		while (j == 0) {
-			
-			x -= PontosPerdidosPorSegundo;
-			y -= PontosPerdidosPorSegundo;
-			z -= PontosPerdidosPorSegundo;
+
+			if (ChaosPorTempo) {
+
+				x -= PontosPerdidosPorSegundo;
+				y -= PontosPerdidosPorSegundo;
+				z -= PontosPerdidosPorSegundo;
+
+			} else {
+
+				x -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				y -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				z -= PontosPerdidosPorSegundo * ChaosMultiplier;
+			}
 
 			yield return new WaitForSeconds (TempoEntrePontosPerdidos);
+		}
+	}
+
+	IEnumerator AumentarChaos(){
+		int j = 0;
+
+		while (j == 0) {
+
+			ChaosMultiplier += ChaosIncrease;
+
+			if (ChaosPorTempo) {
+				TempoEntrePontosPerdidos -= ChaosMultiplier;
+			}
+
+			yield return new WaitForSeconds (ChaosTimeIncrease);
 		}
 	}
 }
