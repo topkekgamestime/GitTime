@@ -1019,6 +1019,16 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.41198096
       objectReference: {fileID: 0}
+    - target: {fileID: 114604954620586042, guid: 839472514b8bc45d8b331a3a285d3dd6,
+        type: 2}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224202516003168826, guid: 839472514b8bc45d8b331a3a285d3dd6,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 839472514b8bc45d8b331a3a285d3dd6, type: 2}
   m_IsPrefabParent: 0
@@ -1247,8 +1257,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1703561747}
-  - component: {fileID: 1703561746}
   - component: {fileID: 1703561748}
+  - component: {fileID: 1703561746}
+  - component: {fileID: 1703561749}
   m_Layer: 0
   m_Name: HudManager
   m_TagString: Untagged
@@ -1267,10 +1278,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303b68839420a483092a8d793a73442f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  z: 0
+  x: 35
+  y: 35
+  z: 35
   money: 0
+  realmoney: 0
   kazoos: {fileID: 1985267070}
   caos: 0
   aud: 0
@@ -1311,6 +1323,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blinkable: {fileID: 857634391}
   time: 0.6
+--- !u!114 &1703561749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703561745}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6318880e000d54954a6f3a504832d47a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Countdown: {fileID: 866624461}
 --- !u!1001 &1729527506
 Prefab:
   m_ObjectHideFlags: 0
