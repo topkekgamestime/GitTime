@@ -8,6 +8,8 @@ public class Blink : MonoBehaviour {
 	public GameObject blinkable;
 	public float time;
 
+	public bool _pause = false;
+
 	void Start () {
 		StartCoroutine (BlinkObj ());
 	}
@@ -17,10 +19,14 @@ public class Blink : MonoBehaviour {
 	{
 		while(true)
 		{
-		yield return new WaitForSecondsRealtime(time);
-		blinkable.SetActive (false);
-		yield return new WaitForSecondsRealtime(time);
-		blinkable.SetActive (true);
+			yield return new WaitForSecondsRealtime(time);
+			if (_pause == false) {
+				blinkable.SetActive (false);
+			}
+			yield return new WaitForSecondsRealtime(time);
+			if (_pause == false) {
+				blinkable.SetActive (true);
+			}
 		}
 	}
 
