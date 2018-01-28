@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Resume : MonoBehaviour {
 
+	public AudioClip resume;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,9 +16,17 @@ public class Resume : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown("space"))
 		{
-			SceneManager.LoadScene (1);
-			Debug.Log("Resume");
+			AudioSource.PlayClipAtPoint (resume, transform.position);
+			StartCoroutine (Voltando ());
 
 		}
 	}
+
+	IEnumerator Voltando()
+	{
+		yield return new WaitForSecondsRealtime(3.5f);
+		SceneManager.LoadScene (1);
+		Debug.Log("Resume");
+	}
+
 }
