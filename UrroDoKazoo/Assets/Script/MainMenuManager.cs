@@ -7,61 +7,48 @@ public class MainMenuManager : MonoBehaviour {
 
 	public GameObject vol;
 
-	private bool IsMuted = false;
+	private bool IsMuted;
 
-
-	/*void Awake()
+	void Awake ()
 	{
-		DontDestroyOnLoad(this);
-
-
-
-		if (FindObjectsOfType(GetType()).Length > 1)
+		if (IsMuted == true) 
 		{
-			if (vol == null) {
-				Destroy (vol);
-			}
+			vol.GetComponent<AudioListener> ().enabled = false;
 		}
-	}*/
+		else 	vol.GetComponent<AudioListener> ().enabled = true;
 
-
-
-
+	}
 
 	public void Back()
-	{
-		SceneManager.LoadScene (0);
-		//Destroy (vol);
-	}
+		{
+			SceneManager.LoadScene (0);
+	
+		}
 
 	public void Play()
-	{
-		GameObject[] objs = GameObject.FindGameObjectsWithTag ("StartSong");
-		if (objs.Length <= 1) {
+		{
 			SceneManager.LoadScene (1);
 		}
-	}
 
 	public void Credits()
-	{
-		DontDestroyOnLoad (vol.GetComponent<AudioSource>());
-		SceneManager.LoadScene (2);
-	}
+		{
+			SceneManager.LoadScene (2);
+		}
 
 	public void Quit()
-	{
-		Application.Quit ();
-	}
+		{
+			Application.Quit ();
+		}
 
 	public void Mute()
 	{
 		if (IsMuted == false) {
-			vol.GetComponent<AudioSource> ().enabled = false;
+			vol.GetComponent<AudioListener> ().enabled = false;
 			IsMuted = true;
 		} 
 		else 
 		{
-			vol.GetComponent<AudioSource> ().enabled = true;
+			vol.GetComponent<AudioListener> ().enabled = true;
 			IsMuted = false;
 		}
 
