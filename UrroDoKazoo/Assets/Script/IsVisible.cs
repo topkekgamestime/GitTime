@@ -5,6 +5,11 @@ using UnityEngine;
 public class IsVisible : MonoBehaviour {
 
 	public Animator personAnim;
+
+	public AudioClip feliz;
+	public AudioClip tragico;
+	public AudioClip humor;
+
 	//public int pontosDaAnimacao = 50;
 	public float segAteContarPontos = 0.5f;
 
@@ -22,6 +27,8 @@ public class IsVisible : MonoBehaviour {
 	private bool _tragicoTriggered = false;
 	private bool _humorTriggered = false;
 
+	private bool _audio;
+
 
 	void Start(){
 
@@ -34,6 +41,8 @@ public class IsVisible : MonoBehaviour {
 	void Update()
 	{
 
+		//AudioSource.PlayClipAtPoint (feliz);
+
 		if (this.GetComponent<Renderer> ().isVisible) {
 
 			if (Camera.main.GetComponent<CameraController> ()._InZoom) {
@@ -45,6 +54,7 @@ public class IsVisible : MonoBehaviour {
 						_fofoTriggered = true;
 						_ultimaAnimacao = "fofo";
 						AddPoint ("fofo",PontosPorSegundos);
+
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("tragedia")) {
 						_tragicoTriggered = true;
 						_ultimaAnimacao = "tragedia";
@@ -92,6 +102,16 @@ public class IsVisible : MonoBehaviour {
 		}
 
 	}
+
+	/*bool EstaTocandoAudio() {
+		string audio = gameObject.transform.parent.Find ("One_shot_audio");
+
+		if (audio == null) {
+			return true;
+		} else {
+			return false;
+		}
+	}*/
 
 
 

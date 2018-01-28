@@ -126,15 +126,23 @@ public class HUDManamegent : MonoBehaviour {
 
 			if (ChaosPorTempo) {
 
-				x -= PontosPerdidosPorSegundo;
-				y -= PontosPerdidosPorSegundo;
-				z -= PontosPerdidosPorSegundo;
+				if (x > 0) {
+					x -= PontosPerdidosPorSegundo;
+				} else if (y > 0) {
+					y -= PontosPerdidosPorSegundo;
+				} else if (z > 0) {
+					z -= PontosPerdidosPorSegundo;
+				}
 
 			} else {
-
-				x -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				y -= PontosPerdidosPorSegundo * ChaosMultiplier;
-				z -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				
+				if (x > 0) {
+					x -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				} else if (y > 0) {
+					y -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				} else if (z > 0) {
+					z -= PontosPerdidosPorSegundo * ChaosMultiplier;
+				}
 			}
 
 			yield return new WaitForSeconds (TempoEntrePontosPerdidos);
