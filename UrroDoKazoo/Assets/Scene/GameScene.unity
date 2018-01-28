@@ -1291,6 +1291,12 @@ MonoBehaviour:
   Treta: {fileID: 922827299}
   Aud: {fileID: 866624461}
   AudAnim: {fileID: 1304093163}
+  PontosPerdidosPorSegundo: 1
+  TempoEntrePontosPerdidos: 1
+  ChaosPorTempo: 1
+  ChaosMultiplier: 1
+  ChaosTimeIncrease: 5
+  ChaosIncrease: 1
 --- !u!4 &1703561747
 Transform:
   m_ObjectHideFlags: 0
