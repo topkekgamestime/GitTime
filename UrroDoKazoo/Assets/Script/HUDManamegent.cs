@@ -103,7 +103,7 @@ public class HUDManamegent : MonoBehaviour {
 				Time.timeScale = 0;
 				gameObject.GetComponent<Blink> ()._pause = true;
 			}
-				//SceneManager.LoadScene (3);
+				//SceneManager.LoadScene (4);
 			Debug.Log("Pause");
 
 
@@ -114,7 +114,7 @@ public class HUDManamegent : MonoBehaviour {
 		}
 
 		if (aud < 0) {
-			SceneManager.LoadScene (5);
+			SceneManager.LoadScene (6);
 
 		}
 	}

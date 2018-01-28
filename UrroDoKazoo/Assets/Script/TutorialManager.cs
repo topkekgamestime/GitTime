@@ -7,7 +7,7 @@ public class TutorialManager : MonoBehaviour {
 
 	public void Play()
 	{
-		SceneManager.LoadScene (1);
+		SceneManager.LoadScene (2);
 	}
 
 }
