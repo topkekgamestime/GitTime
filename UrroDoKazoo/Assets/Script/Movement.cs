@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour {
 
 	public Vector3 initialPosition;
 
-	private Animator _personAnim;
+	public Animator _personAnim;
 	private Transform _trGraphics;
 	private Transform _tr;
 	private Vector3 _pos;

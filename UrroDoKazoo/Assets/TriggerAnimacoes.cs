@@ -21,26 +21,30 @@ public class TriggerAnimacoes : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 
-		Debug.Log ("KD");
+		GameObject item = other.gameObject;
 
+		if (other.name != "Figurante") {
+			item = other.gameObject.transform.parent.gameObject;
+		}
+
+		//if (other.tag == "Figurante") {
 		int random = Random.Range (1, 100);
 
 		if (random < porcentagemAnim) {
 
-			Debug.Log ("AAAS");
-
 			if (gameObject.name == "TriggerAnimHumor") {
-				other.gameObject.GetComponent<Animator> ().SetTrigger ("humor");
-				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("humor");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("humor");
+				item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("humor");
 			} else if (gameObject.name == "TriggerAnimTragedia") {
-				other.gameObject.GetComponent<Animator> ().SetTrigger ("tragedia");
-				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("tragedia");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("tragedia");
+				item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("tragedia");
 			} else if (gameObject.name == "TriggerAnimFofo") {
-				other.gameObject.GetComponent<Animator> ().SetTrigger ("fofo");
-				other.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("fofo");
-				//personAnim.SetBool ("moving", true);
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("fofo");
+				item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("fofo");
+					//personAnim.SetBool ("moving", true);
 			}
 		}
+		//}
 
 	}
 

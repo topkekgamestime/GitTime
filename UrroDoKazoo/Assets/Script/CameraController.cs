@@ -11,6 +11,9 @@ public class CameraController : MonoBehaviour {
 	public float DragVelocity = 10.0f;
 	public float HoldMouseTime = 1.0f;
 
+	public float zoomOut = 80.0f;
+	public float zoomIn = 20.0f;
+
 
 	private Vector3 _initialCameraPos;
 	private float _cameraWidth;
@@ -48,9 +51,18 @@ public class CameraController : MonoBehaviour {
 			clickTimer += Time.deltaTime;
 
 			if (clickTimer >= HoldMouseTime) {
-				
-				float fov = Mathf.Clamp(5f + 27f, 27f, 5f);
-				Camera.main.fieldOfView = fov;
+
+				float mouseGamePositionX = board.GetComponent<Collider> ().bounds.size.x * Input.mousePosition.x / Screen.width;
+				float mouseGamePositionY = board.GetComponent<Collider> ().bounds.size.z * Input.mousePosition.y / Screen.height;
+
+				float mouseX = board.GetComponent<Collider> ().bounds.size.x / 2 - mouseGamePositionX;
+				float mouseY = board.GetComponent<Collider> ().bounds.size.z / 2 - mouseGamePositionY;
+
+				Camera.main.transform.position = new Vector3 (mouseX, 100, mouseY);
+
+				//float fov = Mathf.Clamp(5f + 27f, 27f, 5f);
+				//Camera.main.fieldOfView = fov;
+				Camera.main.orthographicSize = zoomOut;
 
 				_InZoom = true;
 
@@ -76,8 +88,9 @@ public class CameraController : MonoBehaviour {
 
 
 			if (_InZoom) {
-				float fov = Mathf.Clamp (5f + 27f, 5f, 27f);
-				Camera.main.fieldOfView = fov;
+				//float fov = Mathf.Clamp (5f + 27f, 5f, 27f);
+				//Camera.main.fieldOfView = fov;
+				Camera.main.orthographicSize = zoomIn;
 				transform.position = _initialCameraPos;
 
 				_InZoom = false;
