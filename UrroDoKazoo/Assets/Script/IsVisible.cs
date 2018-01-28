@@ -56,15 +56,20 @@ public class IsVisible : MonoBehaviour {
 						_fofoTriggered = true;
 						_ultimaAnimacao = "fofo";
 						AddPoint ("fofo",PontosPorSegundos);
+						personAnim.SetTrigger("pFofo");
 
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("tragedia")) {
 						_tragicoTriggered = true;
 						_ultimaAnimacao = "tragedia";
 						AddPoint ("tragedia",PontosPorSegundos);
+						personAnim.SetTrigger("pTragedia");
+
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("humor")) {
 						_humorTriggered = true;
 						_ultimaAnimacao = "humor";
 						AddPoint ("humor",PontosPorSegundos);
+						personAnim.SetTrigger("pHumor");
+
 					} else {
 						if (_ultimaAnimacao == "fofo" || _ultimaAnimacao == "tragedia" || _ultimaAnimacao == "humor") {
 							if (_ultimaAnimacao == "fofo") {
