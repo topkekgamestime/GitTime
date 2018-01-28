@@ -40,6 +40,7 @@ public class CameraController : MonoBehaviour {
 		_cameraHeight = gameObject.GetComponent<Camera> ().rect.height;
 
 		_boardBounds = board.transform.localScale;
+		//_boardBounds = board.transform.GetComponent<Bounds>().size.x;
 
 	}
 	

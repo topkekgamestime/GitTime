@@ -959,7 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2faff3051aa64dbebbbea95874d70c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 0}
+  board: {fileID: 1454184489}
   WidthBoundMultiplier: 6.4
   HeightBoundMultiplier: 100
   DragVelocity: 25
@@ -4909,6 +4909,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1659682347}
+  - component: {fileID: 1659682348}
   m_Layer: 0
   m_Name: Cenario
   m_TagString: Untagged
@@ -4936,6 +4937,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!65 &1659682348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659682346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 58.730453, y: 33.811634, z: 1}
+  m_Center: {x: 0.50065994, y: 0.4432837, z: 1.8156117e-15}
 --- !u!1 &1700485630
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,6 +5058,8 @@ MonoBehaviour:
   kazoos: {fileID: 1985267070}
   caos: 0
   aud: 0
+  Corta: {fileID: 0}
+  Voltamos: {fileID: 0}
   IsPaused: 0
   hud01: {fileID: 30491214}
   hud02: {fileID: 1989623183}
@@ -5061,6 +5076,7 @@ MonoBehaviour:
   ChaosMultiplier: 1
   ChaosTimeIncrease: 5
   ChaosIncrease: 1
+  LimiteChaos: 100
 --- !u!4 &1703561747
 Transform:
   m_ObjectHideFlags: 0
