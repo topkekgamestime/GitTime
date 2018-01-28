@@ -95,11 +95,7 @@ public class Movement : MonoBehaviour {
 			int random = Random.Range (1, 100);
 			int anim = Random.Range (1, 3);
 
-			Debug.Log ("ALGO");
-
 			if (random < ChanceAnimacoes) {
-
-				Debug.Log ("ANIMA");
 
 				if (anim == 1) {
 					_personAnim.SetTrigger ("humor");
