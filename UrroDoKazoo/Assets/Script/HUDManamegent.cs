@@ -92,6 +92,8 @@ public class HUDManamegent : MonoBehaviour {
 				hud02.SetActive (true);
 				hud03.SetActive (true);
 
+
+
 				pausemenu.SetActive (false);
 
 				IsPaused = false;
