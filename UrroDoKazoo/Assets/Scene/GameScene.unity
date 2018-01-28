@@ -1263,6 +1263,7 @@ MonoBehaviour:
   Humor: {fileID: 1874761112}
   Treta: {fileID: 922827299}
   Aud: {fileID: 866624461}
+  AudAnim: {fileID: 1304093163}
 --- !u!4 &1703561747
 Transform:
   m_ObjectHideFlags: 0

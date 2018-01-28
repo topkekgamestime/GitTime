@@ -37,7 +37,7 @@ public class HUDManamegent : MonoBehaviour {
 		Humor.value = y;
 		Treta.value = z;
 		Aud.value = aud;
-		AudAnim.SetFloat("value", Aud.value/100)
+		AudAnim.SetFloat("value", Aud.value);
 		kazoos.text = money.ToString();
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
