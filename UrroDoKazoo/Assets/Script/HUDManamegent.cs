@@ -24,7 +24,7 @@ public class HUDManamegent : MonoBehaviour {
 	public Slider Humor;
 	public Slider Treta;
 	public Slider Aud;
-
+	public Animator AudAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +37,7 @@ public class HUDManamegent : MonoBehaviour {
 		Humor.value = y;
 		Treta.value = z;
 		Aud.value = aud;
+		AudAnim.SetFloat("value", Aud.value/100)
 		kazoos.text = money.ToString();
 
 		if(Input.GetKeyDown("escape") || Input.GetKeyDown("space"))
