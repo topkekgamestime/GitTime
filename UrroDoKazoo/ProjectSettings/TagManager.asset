@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tela
+    uniqueID: 1205274257
+    locked: 0
