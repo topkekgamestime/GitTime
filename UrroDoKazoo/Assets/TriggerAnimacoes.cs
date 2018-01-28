@@ -33,13 +33,13 @@ public class TriggerAnimacoes : MonoBehaviour {
 		if (random < porcentagemAnim) {
 
 			if (gameObject.name == "TriggerAnimHumor") {
-				item.gameObject.GetComponent<Animator> ().SetTrigger ("humor");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("humor");
 				item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("humor");
 			} else if (gameObject.name == "TriggerAnimTragedia") {
-				item.gameObject.GetComponent<Animator> ().SetTrigger ("tragedia");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("tragedia");
 				item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("tragedia");
 			} else if (gameObject.name == "TriggerAnimFofo") {
-				item.gameObject.GetComponent<Animator> ().SetTrigger ("fofo");
+				item.gameObject.GetComponent<Movement> ()._personAnim.SetTrigger ("fofo");
 				item.gameObject.GetComponent<Movement> ().ExecutaAnimacoes ("fofo");
 					//personAnim.SetBool ("moving", true);
 			}
