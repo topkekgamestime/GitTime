@@ -9,7 +9,7 @@ VideoClipImporter:
   quality: 0.5
   isColorLinear: 0
   originalWidth: 652
-  originalHeight: 501
+  originalHeight: 502
   frameRange: 0
   startFrame: -1
   endFrame: -1
@@ -22,25 +22,25 @@ VideoClipImporter:
   sourceHasAlpha: 0
   flipVertical: 0
   flipHorizontal: 0
-  pixelAspectRatioNumerator: 652
-  pixelAspectRatioDenominator: 652
+  pixelAspectRatioNumerator: 1
+  pixelAspectRatioDenominator: 1
   importAudio: 1
   sourceAudioChannelCount: 0200
   sourceAudioSampleRate: 80bb0000
   targetSettings: {}
   output:
-    format: 0
+    format: 1
     settings:
       enableTranscoding: 0
       codec: 0
       resizeFormat: 0
       aspectRatio: 0
       customWidth: 652
-      customHeight: 501
+      customHeight: 502
       bitrateMode: 2
       spatialQuality: 2
     encodedWidth: 652
-    encodedHeight: 501
+    encodedHeight: 502
     encodedStartFrame: 0
     encodedEndFrame: 120
     streamedResource:

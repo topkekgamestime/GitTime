@@ -64,12 +64,27 @@ public class HUDManamegent : MonoBehaviour {
 
 	}
 
+	IEnumerator EsperaMesmo(){
+		{
+			hud01.SetActive (false);
+			hud02.SetActive (false);
+			hud03.SetActive (false);
+			yield return new WaitForSecondsRealtime(0.5f);
+	
+			musica.SetActive (false);
+
+			Time.timeScale = 0;
+			gameObject.GetComponent<Blink> ()._pause = true;
+		}
+	}
+
 	IEnumerator Espera(){
 		{
-			yield return new WaitForSecondsRealtime(3.2f);
+			yield return new WaitForSecondsRealtime(3.25f);
 			hud01.SetActive (true);
 			hud02.SetActive (true);
 			hud03.SetActive (true);
+			musica.SetActive (true);
 
 			pausemenu.SetActive (false);
 
@@ -112,13 +127,9 @@ public class HUDManamegent : MonoBehaviour {
 				//AudioSource.PlayClipAtPoint (Corta, transform.position);
 
 				Voltamos.SetActive (false);
-				hud01.SetActive (false);
-				hud02.SetActive (false);
-				hud03.SetActive (false);
-
 				pausemenu.SetActive (true);
-				Time.timeScale = 0;
-				gameObject.GetComponent<Blink> ()._pause = true;
+				StartCoroutine (EsperaMesmo ());
+
 			}
 				//SceneManager.LoadScene (4);
 			Debug.Log("Pause");
