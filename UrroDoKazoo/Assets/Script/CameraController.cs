@@ -9,20 +9,21 @@ public class CameraController : MonoBehaviour {
 	public float WidthBoundMultiplier = 5.5f;
 	public float HeightBoundMultiplier = 5.5f;
 	public float DragVelocity = 10.0f;
-	public float HoldMouseTime = 1.0f;
+	public float HoldMouseTime = 0.2f;
 
 	public float zoomOut = 80.0f;
 	public float zoomIn = 20.0f;
 
 
-	private Vector3 _initialCameraPos;
+    private Vector3 _initialCameraPos;
 	private float _cameraWidth;
 	private float _cameraHeight;
 	private Vector3 _boardBounds;
 
 	public bool _InZoom = false;
+    public bool _Zoom = false;
 
-	float minFov = 15f;
+    float minFov = 15f;
 	float maxFov = 90f;
 	float sensitivity = 10f;
 
@@ -32,9 +33,8 @@ public class CameraController : MonoBehaviour {
 
 	bool imBeingDragged = false;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		_initialCameraPos = gameObject.transform.position;
 		_cameraWidth = gameObject.GetComponent<Camera> ().rect.width;
 		_cameraHeight = gameObject.GetComponent<Camera> ().rect.height;
@@ -64,14 +64,31 @@ public class CameraController : MonoBehaviour {
 					mouseY < board.GetComponent<Collider> ().bounds.size.z / 2 &&
 					mouseY > -board.GetComponent<Collider> ().bounds.size.z / 2) {
 
-					Camera.main.transform.position = new Vector3 (mouseX, 100, mouseY);
-				}
+					Camera.main.transform.position = (new Vector3 (mouseX, 100, mouseY) + Camera.main.transform.position)/2.0f;
+
+                    _Zoom = true;
+                }
 
 
 
-				//float fov = Mathf.Clamp(5f + 27f, 27f, 5f);
-				//Camera.main.fieldOfView = fov;
-				Camera.main.orthographicSize = zoomIn;
+                //float fov = Mathf.Clamp(5f + 27f, 27f, 5f);
+                //Camera.main.fieldOfView = fov;
+
+                //Faz o zoom gradual da câmera
+                if (_Zoom)
+                {
+                    if (Camera.main.orthographicSize - zoomIn > 1)
+                    {
+                        Camera.main.orthographicSize = (Camera.main.orthographicSize + zoomIn) / 2.0f;
+                    }
+                    else
+                    {
+                        Camera.main.orthographicSize = zoomIn;
+
+                        _Zoom = false;
+                   } 
+                }
+
 
 				_InZoom = true; 
 
@@ -93,22 +110,38 @@ public class CameraController : MonoBehaviour {
 		}
 
 
-		if (Input.GetMouseButtonUp (0)) {
 
+        if (Input.GetMouseButtonUp (0)) {
 
-			if (_InZoom) {
+            if (_InZoom) {
 				//float fov = Mathf.Clamp (5f + 27f, 5f, 27f);
 				//Camera.main.fieldOfView = fov;
-				Camera.main.orthographicSize = zoomOut;
-				transform.position = _initialCameraPos;
+				//Camera.main.orthographicSize = zoomOut;
+				//transform.position = _initialCameraPos;
 
 				_InZoom = false;
+                _Zoom = true;
 			}
+            
 
 			clickTimer = 0.0f;
 
 		}
-	
-	}
+
+        if (!_InZoom && _Zoom)
+        {
+            if (zoomOut - Camera.main.orthographicSize > 1)
+            {
+                transform.position = (_initialCameraPos + transform.position) / 2.0f ;
+                Camera.main.orthographicSize = (Camera.main.orthographicSize + zoomOut) / 2.0f;
+            }
+            else
+            {
+                Camera.main.orthographicSize = zoomOut;
+
+                _Zoom = false;
+            }
+        }
+    }
 
 }
