@@ -136,8 +136,16 @@ public class HUDManamegent : MonoBehaviour {
 
 
 		}
-			
-		if (aud < 0) {
+
+        if (Input.GetKeyDown("l"))
+        {
+            x = 0;
+            y = 0;
+            z = 0;
+        }
+
+
+            if (aud <= 0) {
 			StartCoroutine (GameOver ());
 
 		}
