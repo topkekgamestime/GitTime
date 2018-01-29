@@ -47,7 +47,8 @@ public class HUDManamegent : MonoBehaviour {
 	public float LimiteChaos = 100f;
 	public GameObject OVER;
 	public GameObject musica;
-
+    public GameObject pontos;
+    public Text score;
 
 	private float _money;
 
@@ -95,10 +96,13 @@ public class HUDManamegent : MonoBehaviour {
 
 	IEnumerator GameOver(){
 		{
-			musica.SetActive (false);
-			OVER.SetActive (true);
+            musica.SetActive(false);
+            pausemenu.SetActive(false);
+            OVER.SetActive (true);
 			yield return new WaitForSecondsRealtime(5.0f);
-			SceneManager.LoadScene (6);
+            pontos.SetActive (true);
+            score.text = realmoney.ToString();
+			//SceneManager.LoadScene (6);
 
 		}
 	}
