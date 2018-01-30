@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour {
 	private Vector3 _boardBounds;
 
 	public bool _InZoom = false;
-    public bool _Zoom = false;
+    public bool _ZoomMovement = false;
 
     float minFov = 15f;
 	float maxFov = 90f;
@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour {
 
 					Camera.main.transform.position = (new Vector3 (mouseX, 100, mouseY) + Camera.main.transform.position)/2.0f;
 
-                    _Zoom = true;
+                    _ZoomMovement = true;
                 }
 
 
@@ -75,7 +75,7 @@ public class CameraController : MonoBehaviour {
                 //Camera.main.fieldOfView = fov;
 
                 //Faz o zoom gradual da câmera
-                if (_Zoom)
+                if (_ZoomMovement)
                 {
                     if (Camera.main.orthographicSize - zoomIn > 1)
                     {
@@ -85,13 +85,14 @@ public class CameraController : MonoBehaviour {
                     {
                         Camera.main.orthographicSize = zoomIn;
 
-                        _Zoom = false;
+                        _ZoomMovement = false;
                    } 
                 }
 
 
 				_InZoom = true; 
 
+                
 				if (_InZoom) {
 
 					Vector3 position = gameObject.transform.position;
@@ -120,7 +121,7 @@ public class CameraController : MonoBehaviour {
 				//transform.position = _initialCameraPos;
 
 				_InZoom = false;
-                _Zoom = true;
+                _ZoomMovement = true;
 			}
             
 
@@ -128,7 +129,7 @@ public class CameraController : MonoBehaviour {
 
 		}
 
-        if (!_InZoom && _Zoom)
+        if (!_InZoom && _ZoomMovement)
         {
             if (zoomOut - Camera.main.orthographicSize > 1)
             {
@@ -139,7 +140,7 @@ public class CameraController : MonoBehaviour {
             {
                 Camera.main.orthographicSize = zoomOut;
 
-                _Zoom = false;
+                _ZoomMovement = false;
             }
         }
     }
