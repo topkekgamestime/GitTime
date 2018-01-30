@@ -56,41 +56,47 @@ public class IsVisible : MonoBehaviour {
 						_fofoTriggered = true;
 						_ultimaAnimacao = "fofo";
 						AddPoint ("fofo",PontosPorSegundos);
-						personAnim.SetTrigger("pFofo");
+						_personAnim.SetBool("pFofo",true);
 
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("tragedia")) {
 						_tragicoTriggered = true;
 						_ultimaAnimacao = "tragedia";
 						AddPoint ("tragedia",PontosPorSegundos);
-						personAnim.SetTrigger("pTragedia");
+						_personAnim.SetBool("pTragedia",true);
 
 					} else if (_personAnim.GetCurrentAnimatorStateInfo (0).IsName ("humor")) {
 						_humorTriggered = true;
 						_ultimaAnimacao = "humor";
 						AddPoint ("humor",PontosPorSegundos);
-						personAnim.SetTrigger("pHumor");
+						_personAnim.SetBool("pHumor",true);
 
 					} else {
 						if (_ultimaAnimacao == "fofo" || _ultimaAnimacao == "tragedia" || _ultimaAnimacao == "humor") {
 							if (_ultimaAnimacao == "fofo") {
 								_fofoTriggered = false;
 								_ultimaAnimacao = "";
-								//AddPoint ("fofo",50);
-							} else if (_ultimaAnimacao == "tragedia") {
+
+                                //AddPoint ("fofo",50);
+                            } else if (_ultimaAnimacao == "tragedia") {
 								_tragicoTriggered = false;
 								_ultimaAnimacao = "";
-								//AddPoint ("tragedia",50);
-							} else if (_ultimaAnimacao == "humor") {
+
+                                //AddPoint ("tragedia",50);
+                            } else if (_ultimaAnimacao == "humor") {
 								_humorTriggered = false;
 								_ultimaAnimacao = "";
-								//AddPoint ("humor",50);
-							}
+                                
+                                //AddPoint ("humor",50);
+                            }
 						}
 					}
 				}
 
 			} else {
-				Debug.Log ("Not visible");
+                _personAnim.SetBool("pFofo", false);
+                _personAnim.SetBool("pTragedia", false);
+                _personAnim.SetBool("pHumor", false);
+                Debug.Log ("Not visible");
 			}
 		}
 	}

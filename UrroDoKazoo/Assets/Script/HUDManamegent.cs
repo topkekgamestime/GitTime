@@ -51,11 +51,14 @@ public class HUDManamegent : MonoBehaviour {
     public Text score;
 
 	private float _money;
+    private bool _onPause = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
-		Fofo.value = 35.0f;
+        _onPause = false;
+
+        Fofo.value = 35.0f;
 		Humor.value = 35.0f;
 		Treta.value = 35.0f;
 
@@ -73,8 +76,9 @@ public class HUDManamegent : MonoBehaviour {
 			yield return new WaitForSecondsRealtime(0.5f);
 	
 			musica.SetActive (false);
+            _onPause = true;
 
-			Time.timeScale = 0;
+            Time.timeScale = 0;
 			gameObject.GetComponent<Blink> ()._pause = true;
 		}
 	}
@@ -88,6 +92,7 @@ public class HUDManamegent : MonoBehaviour {
 			musica.SetActive (true);
 
 			pausemenu.SetActive (false);
+            _onPause = false;
 
 			Time.timeScale = 1;
 			gameObject.GetComponent<Blink> ()._pause = false;
@@ -102,15 +107,18 @@ public class HUDManamegent : MonoBehaviour {
 			yield return new WaitForSecondsRealtime(5.0f);
             pontos.SetActive (true);
             score.text = realmoney.ToString();
-			//SceneManager.LoadScene (6);
 
-		}
+            _onPause = true;
+
+            //SceneManager.LoadScene (6);
+
+        }
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		realmoney = Mathf.RoundToInt (_money);
+		realmoney = Mathf.RoundToInt (_money / 1000);
 		aud = (x + y + z) / 3;
 		Fofo.value = x;
 		Humor.value = y;
@@ -159,7 +167,7 @@ public class HUDManamegent : MonoBehaviour {
 	IEnumerator PerderPonto(){
 		int j = 0;
 
-		while (j == 0) {
+		while (j == 0 && !_onPause) {
 
 			if (ChaosPorTempo) {
 
@@ -193,7 +201,7 @@ public class HUDManamegent : MonoBehaviour {
 	IEnumerator AumentarChaos(){
 		int j = 0;
 
-		while (j == 0) {
+		while (j == 0 && !_onPause) {
 
 			if (ChaosMultiplier < LimiteChaos) {
 				ChaosMultiplier += ChaosIncrease;
@@ -212,7 +220,7 @@ public class HUDManamegent : MonoBehaviour {
 	IEnumerator Dinheiro(){
 		int j = 0;
 
-		while (j == 0) {
+        while (j == 0 && !_onPause) {
 
 			_money += 0.5f * aud;
 
